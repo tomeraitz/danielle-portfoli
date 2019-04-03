@@ -8,20 +8,100 @@
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     display: grid;
     color: white;
-    grid-template-rows: 13em 4em 14em 3em;
+    grid-template-rows: repeat(2, 1fr);
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation-name: cf3FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    animation-direction: normal;
   }
 
-  .down{
+  .slider-arrows{
+    display: grid;
+    grid-row-start: 2;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .left{
+    grid-column-start: 1;
+    position: relative;
     z-index: 9999;
-    color: white;
-    width: 30%;
-    height: 30%;
-    top: 100;
-    margin: 0 auto;
-    margin-top: 90vh;
+    color: grey;
+    font-size: 4em;
+    cursor: pointer;
+  }
+
+  .right {
+    grid-column-start: 2;
+    display: inline-block;
+    margin-left: auto;
+    z-index: 9999;
+    color: grey;
+    font-size: 4em;
+    cursor: pointer;
+  }
+
+  @keyframes cf3FadeInOut {
+      0% {
+      opacity:0;
+      }
+      25% {
+      opacity:1;
+      }
+      90% {
+      opacity:1;
+      }
+      100% {
+      opacity:0;
+      }
+  }
+
+  @-moz-keyframes cf3FadeInOut { 
+    0% {
+      opacity:0;
+      }
+      25% {
+      opacity:1;
+      }
+      90% {
+      opacity:1;
+      }
+      100% {
+      opacity:0;
+      }
+  }
+
+@-webkit-keyframes cf3FadeInOut { 
+  0% {
+    opacity:0;
+    }
+    25% {
+    opacity:1;
+    }
+    90% {
+    opacity:1;
+    }
+    100% {
+    opacity:0;
+    }
+  }
+
+@-o-keyframes cf3FadeInOut { 
+  0% {
+    opacity:0;
+    }
+    25% {
+    opacity:1;
+    }
+    90% {
+    opacity:1;
+    }
+    100% {
+    opacity:0;
+    }
   }
 
