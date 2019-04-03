@@ -1,0 +1,246 @@
+.nav-container{
+    display: grid;
+    height: 4em;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    z-index: 99999;
+}
+
+.logo{
+    display: grid;
+    background-color: white;
+    width: 70%;
+    height: 90%;
+    margin-top: 10px;
+    color: gray;
+    text-align: center;
+    font-size: 2em;
+    border: 1px solid gray;
+    justify-self: center;
+}
+
+.menu{
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 7em;
+    height: 70%;
+    margin-top: 10px;
+    border: 1px solid gray;
+    justify-self: center;
+} 
+
+.menu-title{
+    display: grid;
+    color: gray;
+    font-size: 1.5em;
+    margin-left: 5px;
+}
+
+.menu-bars{
+    display: grid;
+    color: gray;
+    justify-self: end;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.inner-burger1{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    animation-name: animaBurger1;
+    animation-timing-function: ease;
+    animation-direction: reverse;
+    animation-duration: 0.4s;
+    /* animation-fill-mode: forwards; */
+}
+
+.inner-burger2{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    animation-name: animaBurger2;
+    animation-timing-function: ease;
+    animation-direction: reverse;
+    animation-duration: 0.4s;
+    /* animation-fill-mode: forwards; */
+}
+
+.inner-burger3{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    animation-name: animaBurger3;
+    animation-timing-function: ease;
+    animation-direction: reverse;
+    animation-duration: 0.4s;
+    /* animation-fill-mode: forwards; */
+}
+
+
+.burger1{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    animation-name: animaBurger1;
+    animation-timing-function: ease;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.burger2{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    animation-name: animaBurger2;
+    animation-timing-function: ease;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.burger3{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    animation-name: animaBurger3;
+    animation-timing-function: ease;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animaBurger1 {
+from{
+    transform: rotate(0deg) translate(0px);
+    }
+to{
+    transform: rotate(-45deg) translate(-6px, 3px);
+  }
+}
+
+@-moz-keyframes animaBurger1 { 
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(-45deg) translate(-6px, 3px);
+      }
+  }
+
+@-webkit-keyframes animaBurger1 { 
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(-45deg) translate(-6px, 3px);
+      }
+  }
+
+@-o-keyframes animaBurger1 { 
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(-45deg) translate(-6px, 3px);
+      }
+  }
+
+
+
+@keyframes animaBurger2{
+    from{
+        opacity: 1;
+        }
+    to{
+        opacity: 0;
+      }
+    }
+@-moz-keyframes animaBurger2 { 
+    from{
+        opacity: 1;
+        }
+    to{
+        opacity: 0;
+      }
+    }
+
+@-webkit-keyframes animaBurger2 { 
+    from{
+        opacity: 1;
+        }
+    to{
+        opacity: 0;
+      }
+    }
+
+@-o-keyframes animaBurger2 { 
+    from{
+        opacity: 1;
+        }
+    to{
+        opacity: 0;
+      }
+}
+
+
+
+@keyframes animaBurger3 {
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(45deg) translate(-5px, -2px);
+    }
+}
+
+@-moz-keyframes animaBurger3 { 
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(45deg) translate(-5px, -2px);
+    }
+}
+
+@-webkit-keyframes animaBurger3 { 
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(45deg) translate(-5px, -2px);
+    }
+}
+
+@-o-keyframes animaBurger3 { 
+    from{
+        transform: rotate(0deg) translate(0px);
+        }
+    to{
+        transform: rotate(45deg) translate(-5px, -2px);
+    }
+}
+
+

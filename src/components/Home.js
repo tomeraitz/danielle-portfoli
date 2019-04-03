@@ -44,16 +44,13 @@ class Home extends Component {
 
   render (){
         return(
-                <div className="main" >
-                    <div ref="home" 
-                         className="home" 
-                         style={{backgroundImage: `url(${this.props.state.data.images})`}}>
-                         <div className="slider-arrows">
-                            <FaAngleLeft onClick={this.left} className="left"/>
-                            <FaAngleRight onClick={this.right} className="right"/>
-                         </div>
-                    
-                    </div>
+                <div ref="home" 
+                      className="home" 
+                      style={{backgroundImage: `url(${this.props.state.data.images})`}}>
+                      <div className="slider-arrows">
+                        <FaAngleLeft onClick={this.left} className="left"/>
+                        <FaAngleRight onClick={this.right} className="right"/>
+                      </div>
                 </div>
             )
     }

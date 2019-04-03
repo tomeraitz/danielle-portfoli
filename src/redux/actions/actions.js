@@ -1,7 +1,14 @@
 export const SLIDER = 'images : slider'
 export const SLIDER_LEFT = 'images : sliderLeft'
 export const SLIDER_RIGHT = 'images : sliderRight'
+export const TOGGLE = 'menu : toggle'
 
+
+export function toggle(){
+    return {
+        type: TOGGLE,
+    }
+}
 
 export function slideImages(index){
     return {
