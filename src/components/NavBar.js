@@ -1,6 +1,6 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
-import {TOGGLE} from '../redux/actions/actions'
+import {TOGGLE, STOP_LOOP ,CLASS_NAME, CLASS_NAME_DROP} from '../redux/actions/actions'
 import '../styles/navigation.css'
 import MenuPopUp from "./MenuPopUp";
 
@@ -12,12 +12,12 @@ class NavBar extends Component {
     this.props = props
   }
 
-  change = () => {
-      this.props.toggle()
-      this.forceUpdate()
+  change =async () => {
+    await  this.props.changeClassName("home")
+    await  this.props.changeclassName(false)
+    await  this.props.stopLoop(!this.props.state.data.stopLoop)
+    await  this.props.toggle()
   }
-
- 
 
   render (){
         return(
@@ -42,6 +42,9 @@ class NavBar extends Component {
   function mapDispatchToProps(dispatch) {
     return({
         toggle : () => dispatch({type : TOGGLE}),
+        changeClassName : (className) => dispatch({type : CLASS_NAME,payload: className}),
+        stopLoop : (isStop) => dispatch({type : STOP_LOOP,payload: isStop}),
+        changeclassName : (index) => dispatch({type : CLASS_NAME_DROP,payload: index}),
     })
   }
 

@@ -5,3 +5,51 @@
     height: 100vh;
     z-index: -99;
 }
+
+.list{
+    margin: 0 auto;
+    color: black;
+    text-align: center;
+    position: relative;
+    top: 20%;
+    animation-name: slideDown;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+}
+
+.list-dropdow{
+    cursor: pointer;
+}
+
+.drop-items{
+    display: none;
+    height: 40px;
+}
+
+.drop-items-active{
+    display: block;
+    height: 40px;
+    animation-name: dropDown;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+}
+
+@keyframes slideDown {
+    from{
+        margin-top: -5%;
+        }
+    to{
+        margin-top: 0%;
+      }
+}
+
+@keyframes dropDown {
+    from{
+        height: 0px;
+        }
+    to{
+        height: 40px;
+      }
+}
