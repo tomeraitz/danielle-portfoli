@@ -22,7 +22,7 @@ class Home extends Component {
       setTimeout(this.slider, nextAt - new Date().getTime())
     }
     else{
-      let nextAt = new Date().getTime() +15000
+      let nextAt = new Date().getTime() +7500
       this.props.slideImages(this.props.state.data.index)
       this.props.changeClassName("cf3FadeInOut home")
       setTimeout(this.slider, nextAt - new Date().getTime())
@@ -31,25 +31,35 @@ class Home extends Component {
   }
 
   left = () =>{
-    this.slideButton(this.props.state.data.index + 1)
+    this.slideButton(1)
   }
 
   right = () =>{
-    this.slideButton(this.props.state.data.index - 1)
+    this.slideButton(2)
   }
 
   slideButton = (index) =>{
     this.props.stopLoop(true)
     this.props.changeClassName("home")
-    this.props.sliderRight(index)
+    index === 1 ?  this.props.sliderLeft(this.props.state.data.index +1):  this.props.sliderRight(this.props.state.data.index -1)
     this.props.stopLoop(false)
   }
 
   render (){
         return(
-                <div ref="home" 
-                      className={this.props.state.data.className}
-                      style={{backgroundImage: `url(${this.props.state.data.images})`}}>
+                <div ref="home" className="home">
+                  {this.props.state.data.images.map((image , index) =>{
+                      if(index === this.props.state.data.index){
+                       return <div className="fade-in" >
+                                <img src={image} width="100%" height="100%"></img>
+                              </div>
+                      }
+                      else{
+                        return <div className="fade-out">
+                                  <img src={image} width="auto" height="100%"></img>
+                                </div>
+                      }
+                  })}
                       <div className="slider-arrows">
                         <FaAngleLeft onClick={this.left} className="left"/>
                         <FaAngleRight onClick={this.right} className="right"/>

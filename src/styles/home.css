@@ -1,29 +1,40 @@
 .main{
-    height: 100vh;
     overflow: hidden;
   }
   
   .home{
-    display: grid;
+    position: absolute;
     color: white;
-    grid-template-rows: repeat(2, 1fr);
     height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .fade-in{
+    position: relative;
+    z-index: 0; 
+    display: block;
+    opacity: 1;
+    height: 100vh;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation-name: fadeIn;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
   }
   
-  .cf3FadeInOut{
-    animation-name: cf3FadeInOut;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 15s;
-    animation-direction: normal;
+  .fade-out{
+    display: none; 
   }
 
   .slider-arrows{
     display: grid;
-    grid-row-start: 2;
+    position: relative;
+    top: -50%;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -46,63 +57,39 @@
     cursor: pointer;
   }
 
-  @keyframes cf3FadeInOut {
-      0% {
-      opacity:0;
-      }
-      10% {
-      opacity:1;
-      }
-      90% {
-      opacity:1;
-      }
-      100% {
-      opacity:0;
-      }
+   @keyframes fadeIn {
+    from{
+      opacity: 0.5;
+    }
+    to{
+      opacity: 1;
+    }
   }
 
   @-moz-keyframes cf3FadeInOut { 
-    0% {
-      opacity:0;
-      }
-      10% {
-      opacity:1;
-      }
-      90% {
-      opacity:1;
-      }
-      100% {
-      opacity:0;
-      }
+    from{
+      opacity: 0.5;
+    }
+    to{
+      opacity: 1;
+    }
   }
 
 @-webkit-keyframes cf3FadeInOut { 
-  0% {
-    opacity:0;
-    }
-    10% {
-    opacity:1;
-    }
-    90% {
-    opacity:1;
-    }
-    100% {
-    opacity:0;
-    }
+  from{
+    opacity: 0.5;
+  }
+  to{
+    opacity: 1;
+  }
   }
 
 @-o-keyframes cf3FadeInOut { 
-  0% {
-    opacity:0;
-    }
-    10% {
-    opacity:1;
-    }
-    90% {
-    opacity:1;
-    }
-    100% {
-    opacity:0;
-    }
+  from{
+    opacity: 0.5;
   }
+  to{
+    opacity: 1;
+  }
+  } 
 

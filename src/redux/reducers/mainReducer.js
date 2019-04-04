@@ -2,7 +2,7 @@ import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NA
 import images from '../../consts/images'
 
 let initializeState = {
-    images : images[0],
+    images,
     index : 0,
     className : "",
     stopLoop : false,
@@ -43,12 +43,10 @@ export default function mainReducer (state=initializeState, {type, payload}){
         case SLIDER:
             let newStateSlider = {...state}
             if(payload === 3){
-                newStateSlider.images = images[0]
                 newStateSlider.index = 0 
                 return newStateSlider
             }
             else{
-                newStateSlider.images = images[payload + 1]
                 newStateSlider.index = payload + 1
                 return newStateSlider
             }
@@ -56,12 +54,10 @@ export default function mainReducer (state=initializeState, {type, payload}){
         case SLIDER_LEFT:
             let newStateSliderL = {...state}
             if(payload >= 3){
-                newStateSliderL.images = images[0]
                 newStateSliderL.index = 0 
                 return newStateSliderL
             }
             else{
-                newStateSliderL.images = images[payload]
                 newStateSliderL.index = payload
                 return newStateSliderL
             }
@@ -69,12 +65,10 @@ export default function mainReducer (state=initializeState, {type, payload}){
         case SLIDER_RIGHT:
             let newStateSliderR = {...state}
             if(payload <= 0){
-                newStateSliderR.images = images[3]
                 newStateSliderR.index = 3 
                 return newStateSliderR
             }
             else{
-                newStateSliderR.images = images[payload]
                 newStateSliderR.index = payload
                 return newStateSliderR
             }
