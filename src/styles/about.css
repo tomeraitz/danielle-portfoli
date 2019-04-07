@@ -1,0 +1,91 @@
+.about{
+    background-color: #ffffffb0;
+    background-image: url('../images/green_leaves_PNG3654-min.png');
+    background-size: 100vw 100vh;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -99;
+    animation-name: fadeIn;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+.about-container{
+    margin: 0 auto;
+    color: black;
+    width: 50%;
+    position: relative;
+    top: 20%;
+    animation-name: topFade;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+.back{
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 4em;
+    height: 86%;
+    padding: 10px;
+    color: gray;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border: 1px solid gray;
+    justify-self: center;
+    cursor: pointer;
+
+}
+
+@keyframes fadeIn {
+    from{
+      opacity: 0.5;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn { 
+    from{
+      opacity: 0.5;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+@-webkit-keyframes fadeIn { 
+  from{
+    opacity: 0.5;
+  }
+  to{
+    opacity: 1;
+  }
+  }
+
+@-o-keyframes fadeIn { 
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+  } 
+
+  @keyframes topFade {
+    from{
+        margin-top: -3em;
+        opacity: 0;
+    }
+    to{
+        margin-top: 0%;
+        opacity: 1;
+    }
+  }

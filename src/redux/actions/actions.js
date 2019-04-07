@@ -5,6 +5,13 @@ export const CLASS_NAME = 'images : changeclassName'
 export const TOGGLE = 'menu : toggle'
 export const STOP_LOOP = 'images : stopLoop'
 export const CLASS_NAME_DROP = 'nemu : changeclassNameDropDwon'
+export const TOGGLE_ABOUT = 'pages : about'
+
+export function toggleAbout(){
+    return {
+        type: TOGGLE_ABOUT,
+    }
+}
 
 
 export function changeclassNameDropDwon(index){

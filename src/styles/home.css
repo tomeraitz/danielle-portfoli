@@ -66,7 +66,7 @@
     }
   }
 
-  @-moz-keyframes cf3FadeInOut { 
+  @-moz-keyframes fadeIn { 
     from{
       opacity: 0.5;
     }
@@ -75,7 +75,7 @@
     }
   }
 
-@-webkit-keyframes cf3FadeInOut { 
+@-webkit-keyframes fadeIn { 
   from{
     opacity: 0.5;
   }
@@ -84,7 +84,7 @@
   }
   }
 
-@-o-keyframes cf3FadeInOut { 
+@-o-keyframes fadeIn { 
   from{
     opacity: 0.5;
   }

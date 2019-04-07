@@ -10,14 +10,15 @@
 .logo{
     display: grid;
     background-color: white;
-    width: 70%;
-    height: 90%;
+    width: 4em;
+    height: 4em;
     margin-top: 10px;
+    margin-left: 20%;
     color: gray;
     text-align: center;
     font-size: 2em;
     border: 1px solid gray;
-    justify-self: center;
+
 }
 
 .menu{
@@ -26,7 +27,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     width: 7em;
-    height: 70%;
+    height: 32%;
     margin-top: 10px;
     border: 1px solid gray;
     justify-self: center;
@@ -49,6 +50,15 @@
     cursor: pointer;
     z-index: 99999;
 }
+.unloaded-burger{
+    width: 1em;
+    height: 2px;
+    background-color: gray;
+    margin: 2px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
 
 .inner-burger1{
     width: 1em;

@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import {TOGGLE, STOP_LOOP ,CLASS_NAME, CLASS_NAME_DROP} from '../redux/actions/actions'
 import '../styles/navigation.css'
 import MenuPopUp from "./MenuPopUp";
-
+import About from "./About";
+import logo from '../images/logo.png'
 
 
 class NavBar extends Component {
@@ -14,25 +15,34 @@ class NavBar extends Component {
 
   change =async () => {
     await  this.props.changeClassName("home")
-    await  this.props.changeclassName(false)
-    await  this.props.stopLoop(!this.props.state.data.stopLoop)
+    await  this.props.changeclassNameOfDrop(false)
     await  this.props.toggle()
+    this.props.state.data.istoggle ? 
+    await  this.props.stopLoop(true) : await  this.props.stopLoop(false)
+    
   }
 
   render (){
         return(
                 <div className="nav-container" >
-                    <div className="logo">Logo</div>
+                    <div className="logo"><img alt="logo" src={logo} width="100%" height="100%"></img></div>
                     <div></div>
                     <div className="menu">
                         <span className="menu-title">Menu</span>
                         <div onClick={this.change} className="menu-bars">
-                        {this.props.state.data.toggleClass[+ this.props.state.data.istoggle].map(i =>{
-                           return <div className={i} key={i}></div>
-                        })}
+                          {this.props.state.data.toggleClass[+ this.props.state.data.istoggle].map(i =>{
+                            if(this.props.state.data.counter > 0){
+                              return <div className={i} key={i}></div>
+                            }
+                            else{
+                              return <div className="unloaded-burger" key={i}></div>
+
+                            }
+                          })}
                         </div>
                     </div>
                     {this.props.state.data.istoggle ? <MenuPopUp /> : null}
+                    {this.props.state.data.isToggleAbout ? <About /> : null}
                 </div>
             )
     }
@@ -44,7 +54,7 @@ class NavBar extends Component {
         toggle : () => dispatch({type : TOGGLE}),
         changeClassName : (className) => dispatch({type : CLASS_NAME,payload: className}),
         stopLoop : (isStop) => dispatch({type : STOP_LOOP,payload: isStop}),
-        changeclassName : (index) => dispatch({type : CLASS_NAME_DROP,payload: index}),
+        changeclassNameOfDrop : (index) => dispatch({type : CLASS_NAME_DROP,payload: index}),
     })
   }
 

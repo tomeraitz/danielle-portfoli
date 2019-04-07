@@ -1,6 +1,6 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
-import {CLASS_NAME_DROP} from '../redux/actions/actions'
+import {CLASS_NAME_DROP ,TOGGLE_ABOUT ,TOGGLE, STOP_LOOP ,CLASS_NAME,} from '../redux/actions/actions'
 import '../styles/mneuPopUp.css'
 
 
@@ -11,8 +11,13 @@ class MenuPopUp extends Component {
     this.props = props
   }
 
-  dropDown = () => this.props.changeclassName(!this.props.state.data.dropIndex)
-
+  dropDown = () => this.props.changeclassNameOfDrop(!this.props.state.data.dropIndex)
+  openAbout =async () =>{
+   await this.props.changeClassName("home")
+   await  this.props.stopLoop(true)
+   await this.props.toggle()
+   await this.props.toggleAbout()
+  } 
   
 
   render (){
@@ -27,7 +32,7 @@ class MenuPopUp extends Component {
                         <div className={dropclss}>Project 3</div>
                     </div>
                     <div className="list-dropdow">
-                          <h1>About</h1>
+                          <h1 onClick={this.openAbout}>About</h1>
                     </div>
                     <div className="list-dropdow">
                           <h1>Contact</h1>
@@ -41,7 +46,11 @@ class MenuPopUp extends Component {
 
   function mapDispatchToProps(dispatch) {
     return({
-      changeclassName : (className) => dispatch({type : CLASS_NAME_DROP,payload: className}),
+      toggle : () => dispatch({type : TOGGLE}),
+      changeclassNameOfDrop : (className) => dispatch({type : CLASS_NAME_DROP,payload: className}),
+      toggleAbout : () => dispatch({type : TOGGLE_ABOUT}),
+      changeClassName : (className) => dispatch({type : CLASS_NAME,payload: className}),
+      stopLoop : (isStop) => dispatch({type : STOP_LOOP,payload: isStop}),
     })
   }
 

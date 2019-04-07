@@ -50,13 +50,13 @@ class Home extends Component {
                 <div ref="home" className="home">
                   {this.props.state.data.images.map((image , index) =>{
                       if(index === this.props.state.data.index){
-                       return <div className="fade-in" >
-                                <img src={image} width="100%" height="100%"></img>
+                       return <div className="fade-in" key={image}>
+                                <img alt="slider" src={image} width="100%" height="100%"></img>
                               </div>
                       }
                       else{
-                        return <div className="fade-out">
-                                  <img src={image} width="auto" height="100%"></img>
+                        return <div className="fade-out" key={image}>
+                                  <img alt="slider" src={image} width="auto" height="100%"></img>
                                 </div>
                       }
                   })}
