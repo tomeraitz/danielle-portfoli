@@ -1,0 +1,82 @@
+.projects{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -999;
+    overflow: auto;
+    animation-name: fadeIn;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.project-row-1{ 
+    position: relative;
+    top: 10%;
+    display: grid;
+    justify-items: center;
+}
+
+.project-back{
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-align-items: center;
+    align-items: center;
+    height: 22%;
+    width: 4.9em;
+    padding: 7px;
+    color: gray;
+    font-size: 1.2em;
+    border: 1px solid gray;
+    cursor: pointer;
+    justify-self: center;
+    margin-top: 12px;
+}
+
+.project-subTitle{
+    position: relative;
+    top: -40%;
+}
+
+.discription{
+    margin-left: -21%;
+    margin-top: -20px;
+}
+
+.project-row-2{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(23em, 2fr));
+    top: 10%;
+    justify-items: center;
+}
+
+.project-p{
+    width: 100%;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .project-back{
+        margin-top: 8em;
+        margin-left: -1em;
+        justify-items: start;
+    }
+
+    .project-row-1{ 
+        top: 30%;
+    }
+  
+    .discription{
+        margin-left: 0%;
+        margin-top: 0px;
+        width: 90%;
+    }
+
+    .project-row-2{
+        top: 30%;
+    }
+    
+  }

@@ -1,6 +1,7 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
 import {CLASS_NAME_DROP ,TOGGLE_ABOUT ,TOGGLE, STOP_LOOP ,CLASS_NAME,} from '../redux/actions/actions'
+import {CURRENT_PROJECT} from '../redux/actions/projectsActions'
 import '../styles/mneuPopUp.css'
 
 
@@ -18,6 +19,8 @@ class MenuPopUp extends Component {
    await this.props.toggle()
    await this.props.toggleAbout()
   } 
+
+  openProject = (e) => this.props.currentProject(parseInt(e.target.id))
   
 
   render (){
@@ -27,9 +30,9 @@ class MenuPopUp extends Component {
                   <div className="list">
                     <div className="list-dropdow">
                         <h1 onClick={this.dropDown}>Projects</h1>
-                        <div className={dropclss}>Project 1</div>
-                        <div className={dropclss}>Project 2</div>
-                        <div className={dropclss}>Project 3</div>
+                        <div id="0" onClick={this.openProject} className={dropclss}>Project 1</div>
+                        <div id="1" onClick={this.openProject} className={dropclss}>Project 2</div>
+                        <div id="2" onClick={this.openProject} className={dropclss}>Project 3</div>
                     </div>
                     <div className="list-dropdow">
                           <h1 onClick={this.openAbout}>About</h1>
@@ -51,6 +54,7 @@ class MenuPopUp extends Component {
       toggleAbout : () => dispatch({type : TOGGLE_ABOUT}),
       changeClassName : (className) => dispatch({type : CLASS_NAME,payload: className}),
       stopLoop : (isStop) => dispatch({type : STOP_LOOP,payload: isStop}),
+      currentProject : (index) => dispatch({type : CURRENT_PROJECT,payload: index}),
     })
   }
 
