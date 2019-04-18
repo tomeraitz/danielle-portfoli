@@ -23,20 +23,17 @@ class Projects extends Component {
 
   render (){
         let project = this.props.state.projectsData.project[this.props.state.projectsData.currentProject]
+        console.log(project)
         return(
                 <div className="projects" >
-                    <div className="project-row-1">
-                        <h1 className="project-mainTitle">{project.title}</h1>
-                        <h3 className="project-subTitle">{project.subTitle}</h3>
+                  <div className="main-Project" style={{backgroundImage :`url(${project.mainImage})` }}>
+                    <div></div>
+                    <div className="project-details">
+                        <h1>{project.title}</h1>
+                        <h3>{project.subTitle}</h3>
+                        <hr></hr>
                     </div>
-                    <div className="project-row-2">
-                        <img className="main-image-project" alt="main image project" src={project.mainImage} />
-                        <div className="discription">
-                            <h2>Description</h2>
-                            <p className="project-p">{project.description}</p>
-                        </div>
-              
-                    </div>
+                  </div>
                 </div>
             )
     }

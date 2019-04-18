@@ -31,21 +31,25 @@ class NavBar extends Component {
                 <div className="nav-container" >
                     <div className="logo">
                       <img alt="logo" src={logo} width="100%" height="100%"></img></div>
-                      {this.props.state.projectsData.currentProject !== -1 ? <Back />  : <div></div>}
-                    <div className="menu">
-                        <span className="menu-title">Menu</span>
-                        <div onClick={this.change} className="menu-bars">
-                          {this.props.state.data.toggleClass[+ this.props.state.data.istoggle].map(i =>{
-                            if(this.props.state.data.counter > 0){
-                              return <div className={i} key={i}></div>
-                            }
-                            else{
-                              return <div className="unloaded-burger" key={i}></div>
+                    <div className="col-3">
+                      <div className="menu">
+                          <span className="menu-title">Menu</span>
+                          <div onClick={this.change} className="menu-bars">
+                            {this.props.state.data.toggleClass[+ this.props.state.data.istoggle].map(i =>{
+                              if(this.props.state.data.counter > 0){
+                                return <div className={i} key={i}></div>
+                              }
+                              else{
+                                return <div className="unloaded-burger" key={i}></div>
 
-                            }
-                          })}
-                        </div>
+                              }
+                            })}
+                          </div>
+                          
+                      </div>
+                      {this.props.state.projectsData.currentProject !== -1 ? <Back />  : <div></div>}
                     </div>
+
                     {this.props.state.data.istoggle ? <MenuPopUp /> : null}
                     {this.props.state.data.isToggleAbout ? <About /> : null}
                     {this.props.state.projectsData.currentProject !== -1 ? <Projects />  : null}

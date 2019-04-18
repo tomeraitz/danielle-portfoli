@@ -27,11 +27,17 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     width: 7em;
-    height: 32%;
+    height: 57%;
     margin-top: 10px;
     border: 1px solid gray;
     justify-self: center;
 } 
+
+.col-3{
+    display: grid;
+    grid-column-start: 3;
+    grid-template-rows: repeat(2, 1fr);
+}
 
 .menu-title{
     display: grid;

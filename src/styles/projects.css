@@ -12,22 +12,15 @@
     animation-fill-mode: forwards;
 }
 
-.project-row-1{ 
-    position: relative;
-    top: 10%;
-    display: grid;
-    justify-items: center;
-}
 
 .project-back{
     display: grid;
     background-color: white;
     grid-template-columns: repeat(2, 1fr);
-    -webkit-align-items: center;
     align-items: center;
-    height: 22%;
-    width: 4.9em;
-    padding: 7px;
+    justify-items: center;
+    height: 57%;
+    width: 6em;
     color: gray;
     font-size: 1.2em;
     border: 1px solid gray;
@@ -36,47 +29,24 @@
     margin-top: 12px;
 }
 
-.project-subTitle{
-    position: relative;
-    top: -40%;
-}
-
-.discription{
-    margin-left: -21%;
-    margin-top: -20px;
-}
-
-.project-row-2{
+.main-Project{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(23em, 2fr));
-    top: 10%;
-    justify-items: center;
+    grid-template-columns: 70% 30%;
+    width: 95%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 53%;
+    margin: 0 auto;
+    top: 24%;
 }
 
-.project-p{
-    width: 100%;
+.project-details{
+    background-color: #000000ed;
+    color: white;
+    
 }
+
 @media (min-width: 320px) and (max-width: 480px) {
 
-    .project-back{
-        margin-top: 8em;
-        margin-left: -1em;
-        justify-items: start;
-    }
-
-    .project-row-1{ 
-        top: 30%;
-    }
-  
-    .discription{
-        margin-left: 0%;
-        margin-top: 0px;
-        width: 90%;
-    }
-
-    .project-row-2{
-        top: 30%;
-    }
-    
   }
