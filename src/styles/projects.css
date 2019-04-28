@@ -33,20 +33,85 @@
     position: relative;
     display: grid;
     grid-template-columns: 70% 30%;
-    width: 95%;
+    width: 80%;
+    height: 50%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 53%;
     margin: 0 auto;
-    top: 24%;
+    top: 10em;
 }
 
 .project-details{
     background-color: #000000ed;
     color: white;
+    text-align: center;
     
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+.project-main-titlte{
+    font-size: 2rem;
+}
+
+.project-sub-titlte{
+    font-size: 1.5rem;
+}
+
+.project-main-p{
+    width: 90%;
+    margin: 0 auto;
+    font-size: medium;
+}
+
+.project-gallery{
+    position: relative;
+    display: flex;
+    width: 80vw;
+    height: 8em;
+    align-items: center;
+    top : 11em;
+    margin: 0 auto;
+}
+
+.item{
+    padding: 2%;
+    cursor: pointer;
+}
+
+.hiedden-arrow{
+    visibility: hidden;
+}
+
+.fade-in-slider{
+    animation-name: fade-in-slider;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+}
+
+@keyframes fade-in-slider {
+    from{
+        opacity : 0;
+        }
+    to{
+        opacity: 1;
+      }
+}
+
+@media (min-width: 320px) and (max-width: 480px) , screen and (max-height: 450px) {
+    .main-Project{
+        grid-template-columns: 50% 50%;
+    }
+
+    .project-main-titlte{
+        font-size: 1.7rem;
+    }
+    
+    .project-sub-titlte{
+        font-size: 1rem;
+    }
+
+    .project-main-p{
+        font-size: small;
+    }
 
   }
