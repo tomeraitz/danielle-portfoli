@@ -1,4 +1,4 @@
-import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NAME_DROP ,TOGGLE_ABOUT} from '../actions/actions'
+import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NAME_DROP ,TOGGLE_ABOUT, TOGGLE_CONTACT} from '../actions/actions'
 import images from '../../consts/images'
 
 let initializeState = {
@@ -16,12 +16,18 @@ let initializeState = {
         1 : ["burger1" , "burger2" , "burger3"]
     },
     isToggleAbout : false,
+    isToggleContact : false,
     istoggle : false,
     counter : 0
   }
 
 export default function mainReducer (state=initializeState, {type, payload}){
     switch(type){
+
+        case TOGGLE_CONTACT:
+            let newStateToogleContact = {...state}
+            newStateToogleContact.isToggleContact = !newStateToogleContact.isToggleContact
+            return newStateToogleContact
 
         case TOGGLE_ABOUT:
             let newStateToogleAbout = {...state}
@@ -33,6 +39,10 @@ export default function mainReducer (state=initializeState, {type, payload}){
             newStateToogle.istoggle = !newStateToogle.istoggle
             if(newStateToogle.istoggle && newStateToogle.isToggleAbout){
                 newStateToogle.isToggleAbout = false
+            }
+
+            if(newStateToogle.isToggleContact && newStateToogle.isToggleContact){
+                newStateToogle.isToggleContact = false
             }
             newStateToogle.counter += 1
             return newStateToogle

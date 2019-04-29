@@ -1,0 +1,78 @@
+.form{
+    margin: 0 auto;
+    color: black;
+    width: 50%;
+    position: relative;
+    top: 20%;
+    animation-name: topFade;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+
+.form-title{
+    font-size: 2em;
+    height: 1em;
+    text-align: center; 
+}
+
+.form-description{
+    font-size: 1.2em;
+    padding-bottom: 1em;
+    text-align: center; 
+}
+
+
+.form-details{
+    display: grid;
+    margin: 0 auto; 
+    justify-items: center;
+}
+
+.input-small{
+    display: block;
+    background-color: transparent;
+    border: none;
+    
+    height: 2em;
+    border-bottom: 2px solid #000000a1;
+    font-size: 1em;
+    color: #000000a1;
+    text-align: center;
+    outline: none;
+}
+
+.input-big{
+    display: block;
+    background-color: transparent !important;
+    border: none;
+    
+
+    height: 4em;
+    border-bottom: 2px solid #000000a1;
+    font-size: 1em;
+    color: #000000a1;
+    justify-content: start;
+    text-align: start;
+    outline: none;
+}
+
+::placeholder { 
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+
+
+  .form-controllers{
+      display: flex;
+      padding-top: 2%;
+  }
+
+
+  .form-buttons{
+    height: 1em;
+    margin: 2%;
+}

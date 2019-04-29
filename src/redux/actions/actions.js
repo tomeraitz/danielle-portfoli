@@ -6,6 +6,13 @@ export const TOGGLE = 'menu : toggle'
 export const STOP_LOOP = 'images : stopLoop'
 export const CLASS_NAME_DROP = 'nemu : changeclassNameDropDwon'
 export const TOGGLE_ABOUT = 'pages : about'
+export const TOGGLE_CONTACT = 'pages : contcat'
+
+export function toggleContact(){
+    return {
+        type: TOGGLE_CONTACT,
+    }
+}
 
 export function toggleAbout(){
     return {

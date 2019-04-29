@@ -1,6 +1,6 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
-import {CLASS_NAME_DROP ,TOGGLE_ABOUT ,TOGGLE, STOP_LOOP ,CLASS_NAME,} from '../redux/actions/actions'
+import {CLASS_NAME_DROP ,TOGGLE_ABOUT ,TOGGLE, STOP_LOOP ,CLASS_NAME, TOGGLE_CONTACT} from '../redux/actions/actions'
 import {CURRENT_PROJECT} from '../redux/actions/projectsActions'
 import '../styles/mneuPopUp.css'
 
@@ -13,12 +13,20 @@ class MenuPopUp extends Component {
   }
 
   dropDown = () => this.props.changeclassNameOfDrop(!this.props.state.data.dropIndex)
+
   openAbout =async () =>{
    await this.props.changeClassName("home")
    await  this.props.stopLoop(true)
    await this.props.toggle()
    await this.props.toggleAbout()
   } 
+
+  openContact = async () =>{
+    await this.props.changeClassName("home")
+    await  this.props.stopLoop(true)
+    await this.props.toggle()
+    await this.props.toggleContact()
+   } 
 
   openProject = (e) => this.props.currentProject(parseInt(e.target.id))
   
@@ -38,7 +46,7 @@ class MenuPopUp extends Component {
                           <h1 onClick={this.openAbout}>About</h1>
                     </div>
                     <div className="list-dropdow">
-                          <h1>Contact</h1>
+                          <h1 onClick={this.openContact}>Contact</h1>
                     </div>
                   </div>
                 </div>
@@ -52,6 +60,7 @@ class MenuPopUp extends Component {
       toggle : () => dispatch({type : TOGGLE}),
       changeclassNameOfDrop : (className) => dispatch({type : CLASS_NAME_DROP,payload: className}),
       toggleAbout : () => dispatch({type : TOGGLE_ABOUT}),
+      toggleContact : () => dispatch({type : TOGGLE_CONTACT}),
       changeClassName : (className) => dispatch({type : CLASS_NAME,payload: className}),
       stopLoop : (isStop) => dispatch({type : STOP_LOOP,payload: isStop}),
       currentProject : (index) => dispatch({type : CURRENT_PROJECT,payload: index}),

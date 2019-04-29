@@ -8,6 +8,7 @@ import About from "./About";
 import Projects from "./projects";
 import logo from '../images/logo.png'
 import Back from "./Back";
+import Contact from "./Contact";
 
 
 class NavBar extends Component {
@@ -17,6 +18,7 @@ class NavBar extends Component {
   }
 
   change =async () => {
+    
     await  this.props.changeClassName("home")
     await  this.props.changeclassNameOfDrop(false)
     await  this.props.currentProject(-1)
@@ -52,6 +54,7 @@ class NavBar extends Component {
 
                     {this.props.state.data.istoggle ? <MenuPopUp /> : null}
                     {this.props.state.data.isToggleAbout ? <About /> : null}
+                    {this.props.state.data.isToggleContact ? <Contact /> : null}
                     {this.props.state.projectsData.currentProject !== -1 ? <Projects />  : null}
                 </div>
             )
