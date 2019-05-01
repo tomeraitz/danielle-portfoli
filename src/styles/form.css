@@ -31,11 +31,11 @@
     justify-items: center;
 }
 
+
 .input-small{
     display: block;
     background-color: transparent;
     border: none;
-    
     height: 2em;
     border-bottom: 2px solid #000000a1;
     font-size: 1em;
@@ -48,8 +48,6 @@
     display: block;
     background-color: transparent !important;
     border: none;
-    
-
     height: 4em;
     border-bottom: 2px solid #000000a1;
     font-size: 1em;
@@ -64,15 +62,93 @@
     font-size: 1.5em;
   }
 
-
-
   .form-controllers{
       display: flex;
       padding-top: 2%;
   }
 
-
   .form-buttons{
     height: 1em;
     margin: 2%;
 }
+
+
+.flip-back{
+
+    animation-name: flip-back;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.flip-up{
+    animation-name: flip-up;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.hide{
+    animation-name: hide;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.show{
+    animation-name: show;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flip-back {
+    from{
+        transform: rotatex(0deg);
+        }
+    to{
+        transform: rotatex(180deg);
+        display: grid;
+        margin: 0 auto; 
+        width: 14rem;
+        justify-items: center;
+        border-radius: 20px;
+        background-color: black;
+      }
+}
+
+
+@keyframes flip-up {
+    from{
+        transform: rotatex(180deg);
+        display: grid;
+        margin: 0 auto; 
+        width: 14rem;
+        justify-items: center;
+        border-radius: 20px;
+        background-color: black;
+        }
+    to{
+        transform: rotatex(0deg);
+      }
+}
+
+@keyframes hide {
+    from{
+        visibility: visible;
+        }
+    to{
+        visibility: hidden;
+      }
+}
+
+
+@keyframes show {
+    from{
+        visibility: hidden;
+        }
+    to{
+        visibility: visible;
+      }
+}
+

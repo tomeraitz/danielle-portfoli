@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const INPUT_CHANGE = 'inputs : inputs'
 export const MAIL_STATUS = 'inputs : mail'
-
+export const FLIP = 'form : animation'
 
 
 export function sendToMail(mail){
@@ -16,6 +16,12 @@ export function sendToMail(mail){
           }); 
     }
 
+}
+
+export function flip(){
+    return {
+        type: FLIP,
+    }
 }
 
 export function MailStatus(status){

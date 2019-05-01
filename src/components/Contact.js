@@ -1,7 +1,7 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
 import {TOGGLE_CONTACT, STOP_LOOP} from '../redux/actions/actions'
-import {INPUT_CHANGE, sendToMail} from '../redux/actions/formAction'
+import {INPUT_CHANGE, sendToMail, FLIP} from '../redux/actions/formAction'
 import '../styles/about.css'
 import '../styles/form.css'
 import { FaArrowLeft } from "react-icons/fa";
@@ -26,7 +26,10 @@ class Contact extends Component {
       this.props.changeInput(inputDetilas)
   }
 
-  checkMailStatus = () =>this.props.state.form.isSent ? console.log("sent") : console.log("not sent")
+  checkMailStatus = () =>{
+      this.props.state.form.isSent ? console.log("sent") : console.log("not sent")
+      this.props.flip()
+  }
 
   submit =async () =>{
         let mail = {
@@ -34,12 +37,11 @@ class Contact extends Component {
             "Password" : "RaitzService19",
             "Subject" : "Mail from danielle portfolio",
             "Body" : `<p>From : ${this.props.state.form.name}</p><p>Email : ${this.props.state.form.email}</p><p>Phone : ${this.props.state.form.phone}</p><p>Message : ${this.props.state.form.message}</p>`,
-            "AddAddress" : "danielle571990@gmail.com"
+            "AddAddress" : "tomeraitz1@gmail.com"
         }
-        await   this.props.sendMail(mail)
+        // await   this.props.sendMail(mail)
+        await this.props.flip();
         setTimeout(this.checkMailStatus, 5000)
-        // await this.props.state.form.isSent ? console.log("sent") : console.log("not sent")
-        // console.log(mail)
   }
 
   render (){
@@ -52,9 +54,10 @@ class Contact extends Component {
                                                         send me your details by filling up the form below or 
                                                         send an email to danielle571990@gmail.com
                         </div>
-                        <div className="form-details">
                         
-                            <input className="input-small" 
+                        <div className={form.formClassName}>
+                       
+                            <input className={form.InputSmallclassName} 
                                 type="text" id="name" 
                                 placeholder="Your Name" 
                                 name="name" 
@@ -62,7 +65,7 @@ class Contact extends Component {
                                 onChange={this.handleFields} 
                             />
 
-                            <input className="input-small" 
+                            <input className={form.InputSmallclassName} 
                                 type="email" 
                                 id="email" 
                                 placeholder="Your Email" 
@@ -71,7 +74,7 @@ class Contact extends Component {
                                 onChange={this.handleFields} 
                             />
 
-                            <input className="input-small" 
+                            <input className={form.InputSmallclassName} 
                                     type="number" 
                                     id="phone" 
                                     placeholder="Your Phone" 
@@ -80,7 +83,7 @@ class Contact extends Component {
                                     onChange={this.handleFields} 
                             />
 
-                            <textarea className="input-big" 
+                            <textarea className={form.InputBigclassName} 
                                     type="text"  
                                     name="message" 
                                     placeholder="Message" 
@@ -90,21 +93,24 @@ class Contact extends Component {
                                     >
                             </textarea>
 
-                            <div className="form-controllers">
-                                <div className="back form-buttons" onClick={this.submit}>
+                            <div className={form.InputButtonsclassName}>
+                                <div className="back form-buttons" onClick={this.submit} style={{display: form.display}}>
                                     <IoIosSend />
                                     <span>submit</span>
                                 </div>
                                 
-                                <div className="back form-buttons" onClick={this.closeContact}>
+                                <div className="back form-buttons" onClick={this.closeContact} style={{display: form.display}}>
                                     <FaArrowLeft />
                                     <span>Cancel</span>
                                 </div>
                             </div>
-           
-
                         </div>
+                        {form.formClassName === "form-details flip-back" ? 
+                        <div className="back-card">
+
+                        </div> : null}
                     </form>
+
                 </div>
             )
     }
@@ -117,6 +123,7 @@ class Contact extends Component {
         stopLoop : (isStop) => dispatch({type : STOP_LOOP,payload: isStop}),
         changeInput : (inputDetilas) => dispatch({type : INPUT_CHANGE,payload: inputDetilas}),
         sendMail : (mail) =>  {dispatch(sendToMail(mail))},
+        flip: () => dispatch({type : FLIP}),
     })
   }
 
