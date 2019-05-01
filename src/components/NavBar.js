@@ -49,7 +49,7 @@ class NavBar extends Component {
                           </div>
                           
                       </div>
-                      {this.props.state.projectsData.currentProject !== -1 ? <Back />  : <div></div>}
+                      {this.props.state.projectsData.currentProject !== -1 ? <Back change={this.change}/>  : <div></div>}
                     </div>
 
                     {this.props.state.data.istoggle ? <MenuPopUp /> : null}

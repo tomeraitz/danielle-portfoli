@@ -1,8 +1,12 @@
-import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_LEFT, CHANGE_IMAGE_INDEX_RIGHT} from '../actions/projectsActions'
+import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_LEFT, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_MENUE} from '../actions/projectsActions'
 import imag from '../../images/Missing-image-232x150.png'
 import mainImag from '../../images/living-room-spatial-apartment-architecture-buildings-cbb521-1024-min.jpg'
 let initializeState = {
     currentProject : -1,
+    clssDescriptionMenu : "project-details",
+    clssButtonnMenu : "detials-toggal",
+    arrowDeriction : "right",
+    isToggalRightOrLeft : false,
     project : [
         {
             indexOfImages : 0,
@@ -46,6 +50,21 @@ let initializeState = {
 export default function mainReducer (state=initializeState, {type, payload}){
     switch(type){
 
+        case CHANGE_MENUE:
+            let newMenuState = {...state}
+            if(payload){
+                newMenuState.clssDescriptionMenu = "project-details slide-right-big-menu" 
+                newMenuState.clssButtonnMenu = "detials-toggal slide-right-small-menu" 
+                newMenuState.arrowDeriction = "left"
+            }
+            else{
+                newMenuState.clssDescriptionMenu = "project-details slide-left-big-menu"
+                newMenuState.clssButtonnMenu = "detials-toggal slide-left-small-menu" 
+                newMenuState.arrowDeriction = "right"
+            }
+            
+            newMenuState.isToggalRightOrLeft = payload
+            return newMenuState
 
 
         case CHANGE_IMAGE_INDEX_RIGHT:

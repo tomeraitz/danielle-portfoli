@@ -5,6 +5,7 @@
     height: 100vh;
     z-index: -999;
     overflow: auto;
+    overflow: hidden;
     animation-name: fadeIn;
     animation-timing-function: ease-in-out;
     animation-direction: normal;
@@ -32,7 +33,7 @@
 .main-Project{
     position: relative;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 65% 5% 30%;
     width: 80%;
     height: 50%;
     background-repeat: no-repeat;
@@ -42,8 +43,8 @@
 }
 
 .project-details{
-    background-color: #000000ed;
-    color: white;
+    background-color: #e6ddddeb;
+    color: gray;
     text-align: center;
     
 }
@@ -54,6 +55,15 @@
 
 .project-sub-titlte{
     font-size: 1.5rem;
+}
+
+hr{
+    box-sizing: content-box;
+    height: 0px;
+    background-color: gray;
+    color: gray;
+    border: 1px solid gray;
+    overflow: visible;
 }
 
 .project-main-p{
@@ -77,6 +87,7 @@
     cursor: pointer;
 }
 
+
 .hiedden-arrow{
     visibility: hidden;
 }
@@ -85,7 +96,54 @@
     animation-name: fade-in-slider;
     animation-timing-function: ease-in;
     animation-direction: normal;
+    animation-duration: 2s;
+}
+
+.slide-right-big-menu{
+    animation-name: slide-right-big-menu;
+    animation-timing-function: ease;
+    animation-direction: normal;
     animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.slide-right-small-menu{
+    animation-name: slide-right-small-menu;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.slide-left-big-menu{
+    animation-name: slide-left-big-menu;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.slide-left-small-menu{
+    animation-name: slide-left-small-menu;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.detials-toggal{
+    display: grid;
+    width: 1.5em;
+    height: 2em;
+    justify-self: end;
+    align-self: center;
+    background-color: #e6ddddeb;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.small-menu-right{
+    font-size: 2em;
 }
 
 @keyframes fade-in-slider {
@@ -97,9 +155,58 @@
       }
 }
 
-@media (min-width: 320px) and (max-width: 480px) , screen and (max-height: 450px) {
+@keyframes slide-right-big-menu{
+    from{
+        transform: translateX(0%);
+        opacity: 1;
+       
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes slide-left-big-menu{
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+       
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right-small-menu{
+    from{
+        transform: translateX(0%);
+       
+    }
+    to{
+        transform: translateX(24vw);
+    }
+}
+
+@keyframes slide-left-small-menu{
+    from{
+       
+        transform: translateX(24vw);
+       
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+
+
+@media (min-width: 320px) and (max-width: 700px) , screen and (max-height: 450px) {
     .main-Project{
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 45% 5% 50%;
     }
 
     .project-main-titlte{
@@ -112,6 +219,27 @@
 
     .project-main-p{
         font-size: small;
+    }
+
+    @keyframes slide-right-small-menu{
+        from{
+            transform: translateX(0%);
+           
+        }
+        to{
+            transform: translateX(40vw);
+        }
+    }
+    
+    @keyframes slide-left-small-menu{
+        from{
+           
+            transform: translateX(40vw);
+           
+        }
+        to{
+            transform: translateX(0%);
+        }
     }
 
   }

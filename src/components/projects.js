@@ -1,7 +1,7 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
 import {TOGGLE, STOP_LOOP} from '../redux/actions/actions'
-import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_IMAGE_INDEX_LEFT} from '../redux/actions/projectsActions'
+import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_IMAGE_INDEX_LEFT, CHANGE_MENUE} from '../redux/actions/projectsActions'
 import '../styles/projects.css'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
@@ -32,19 +32,30 @@ class Projects extends Component {
 
   moveRight = () => this.props.changeImageIndexRight(this.props.state.projectsData.currentProject);
 
+  changeMenu = () => {
+    this.props.changeMenu(!this.props.state.projectsData.isToggalRightOrLeft)
+  }
+  
+
   render (){
         let project = this.props.state.projectsData.project[this.props.state.projectsData.currentProject]
         return(
                 <div className="projects" >
                   <div className="main-Project" style={{backgroundImage :`url(${project.mainImage})` }}>
                     <div></div>
-                    <div className="project-details">
+                    <div className={this.props.state.projectsData.clssButtonnMenu} onClick={this.changeMenu}>
+                    {this.props.state.projectsData.arrowDeriction == "right" ?
+                      <FaAngleRight className="right small-menu-right" />: <FaAngleLeft className="left small-menu-right" />}
+                    </div>
+                    <div className={this.props.state.projectsData.clssDescriptionMenu}>
                         <h1 className="project-main-titlte">{project.title}</h1>
                         <h3 className="project-sub-titlte">{project.subTitle}</h3>
                         <hr></hr>
                         <p className="project-main-p">{project.description}</p>
+          
                     </div>
                   </div>
+
                     <div className="project-gallery">
                       {project.gallery.length > 3 ? <FaAngleLeft className="left active-arrow" onClick={this.moveLeft}/> : <FaAngleLeft className="left hiedden-arrow"/>}
                       
@@ -74,6 +85,7 @@ class Projects extends Component {
             changeCurrentImage : (imageDetails) => dispatch({type : CHANGE_IMAGE,payload: imageDetails}),
             changeImageIndexRight : (index) => dispatch({type : CHANGE_IMAGE_INDEX_RIGHT,payload: index}),
             changeImageIndexLeft : (index) => dispatch({type : CHANGE_IMAGE_INDEX_LEFT,payload: index}),
+            changeMenu: (isRight) => dispatch({type : CHANGE_MENUE,payload: isRight}),
     })
   }
 
