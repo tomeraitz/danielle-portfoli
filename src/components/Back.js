@@ -13,8 +13,6 @@ class Back extends Component {
   }
 
   closeProject =async () => {
-    // await  this.props.stopLoop(false)
-    // await this.props.currentProject(-1)
    await this.props.change()
    await this.props.changeclassNameOfDrop(!this.props.state.data.dropIndex)
   } 

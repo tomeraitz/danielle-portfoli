@@ -7,6 +7,13 @@ export const STOP_LOOP = 'images : stopLoop'
 export const CLASS_NAME_DROP = 'nemu : changeclassNameDropDwon'
 export const TOGGLE_ABOUT = 'pages : about'
 export const TOGGLE_CONTACT = 'pages : contcat'
+export const LOADING_PAGE= 'app : loading' 
+
+export function chngeLoadStatus(){
+    return {
+        type: LOADING_PAGE,
+    }
+}
 
 export function toggleContact(){
     return {

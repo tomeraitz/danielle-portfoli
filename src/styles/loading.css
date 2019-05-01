@@ -1,0 +1,35 @@
+.loading{
+    position: fixed;
+    top: 15rem;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#loading-text{
+    color: grey;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.bounce{
+    animation: bounce 0.6s infinite alternate;
+    -webkit-animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-50px);
+    }
+  }
+
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-50px);
+    }
+  }

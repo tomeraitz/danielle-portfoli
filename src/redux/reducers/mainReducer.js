@@ -1,4 +1,4 @@
-import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NAME_DROP ,TOGGLE_ABOUT, TOGGLE_CONTACT} from '../actions/actions'
+import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NAME_DROP ,TOGGLE_ABOUT, TOGGLE_CONTACT, LOADING_PAGE} from '../actions/actions'
 import images from '../../consts/images'
 
 let initializeState = {
@@ -18,11 +18,17 @@ let initializeState = {
     isToggleAbout : false,
     isToggleContact : false,
     istoggle : false,
-    counter : 0
+    counter : 0,
+    isloaded : false
   }
 
 export default function mainReducer (state=initializeState, {type, payload}){
     switch(type){
+
+        case LOADING_PAGE:
+            let newStateLoading = {...state}
+            newStateLoading.isloaded = true
+            return newStateLoading
 
         case TOGGLE_CONTACT:
             let newStateToogleContact = {...state}
