@@ -28,7 +28,7 @@ class Contact extends Component {
 
   checkMailStatus = () =>{
       this.props.state.form.isSent ? console.log("sent") : console.log("not sent")
-      this.props.flip()
+    //   this.props.flip()
   }
 
   submit =async () =>{
@@ -107,7 +107,12 @@ class Contact extends Component {
                         </div>
                         {form.formClassName === "form-details flip-back" ? 
                         <div className="back-card">
-
+                            <span>Waiting For Answer</span>
+                            <div className="spinner">
+                                <div className="bounce1"></div>
+                                <div className="bounce2"></div>
+                                <div className="bounce3"></div>
+                            </div>
                         </div> : null}
                     </form>
 

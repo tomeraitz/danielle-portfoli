@@ -44,7 +44,7 @@ class Projects extends Component {
                   <div className="main-Project" style={{backgroundImage :`url(${project.mainImage})` }}>
                     <div></div>
                     <div className={this.props.state.projectsData.clssButtonnMenu} onClick={this.changeMenu}>
-                    {this.props.state.projectsData.arrowDeriction == "right" ?
+                    {this.props.state.projectsData.arrowDeriction === "right" ?
                       <FaAngleRight className="right small-menu-right" />: <FaAngleLeft className="left small-menu-right" />}
                     </div>
                     <div className={this.props.state.projectsData.clssDescriptionMenu}>
