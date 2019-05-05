@@ -147,6 +147,11 @@
     animation-delay: -0.16s;
   }
 
+  .error{
+      color: red;
+      font-weight: bold;
+  }
+
 @keyframes flip-back {
     from{
         transform: rotatex(0deg);

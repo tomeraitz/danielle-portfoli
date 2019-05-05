@@ -2,10 +2,11 @@ import axios from 'axios';
 export const INPUT_CHANGE = 'inputs : inputs'
 export const MAIL_STATUS = 'inputs : mail'
 export const FLIP = 'form : animation'
+export const VAILDTION = 'form : vaildation'
 
 
 export function sendToMail(mail){
-    return function(dispatch){
+    return  function(dispatch){
           axios.post(`https://mail-tomer-api.herokuapp.com/index.php` , mail)
           .then(response => {
              dispatch({type : MAIL_STATUS ,payload: response.data})
@@ -16,6 +17,12 @@ export function sendToMail(mail){
           }); 
     }
 
+}
+
+export function validation(){
+    return {
+        type: VAILDTION,
+    }
 }
 
 export function flip(){
