@@ -27,15 +27,12 @@ class Contact extends Component {
   }
 
   checkMailStatus = () =>{
-      this.props.state.form.isSent ? console.log("sent") : console.log("not sent")
       this.props.flip()
   }
 
   submit =async () =>{
         let mail = {
-            "Username" : "tomerraitzservice",
-            "Password" : "RaitzService19",
-            "Subject" : "Mail from danielle portfolio",
+            "Subject" : "Mail from Danielle portfolio",
             "Body" : `<p>From : ${this.props.state.form.name}</p><p>Email : ${this.props.state.form.email}</p><p>Phone : ${this.props.state.form.phone}</p><p>Message : ${this.props.state.form.message}</p>`,
             "AddAddress" : "tomeraitz1@gmail.com"
         }

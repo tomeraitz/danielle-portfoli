@@ -1,7 +1,7 @@
 .form{
     margin: 0 auto;
     color: black;
-    width: 50%;
+    width: 80%;
     position: relative;
     top: 20%;
     animation-name: topFade;
@@ -19,8 +19,8 @@
 }
 
 .form-description{
-    font-size: 1.2em;
-    padding-bottom: 1em;
+    font-size: 1.4em;
+    padding-bottom: 0.5em;
     text-align: center; 
 }
 
