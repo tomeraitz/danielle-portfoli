@@ -9,6 +9,7 @@
     animation-direction: normal;
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
+    
 }
 
 
@@ -221,6 +222,18 @@
 @media (min-width: 320px) and (max-width: 780px) , screen and (max-height: 450px) {
     .back-card{
         top: 25rem;
-        left: 4%;
     }
+    .input-small{
+        height: 1.5em;
+    }
+    .input-big{
+        height: 2em;
+    }
+
+    .form-title{
+        height: 0.5em;
+    }
+    ::placeholder { 
+        font-size: 1em;
+      }
   }
