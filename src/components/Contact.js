@@ -34,7 +34,7 @@ class Contact extends Component {
         let mail = {
             "Subject" : "Mail from Danielle portfolio",
             "Body" : `<p>From : ${this.props.state.form.name}</p><p>Email : ${this.props.state.form.email}</p><p>Phone : ${this.props.state.form.phone}</p><p>Message : ${this.props.state.form.message}</p>`,
-            "AddAddress" : "tomeraitz1@gmail.com"
+            "AddAddress" : "danielle571990@gmail.com"
         }
         await this.props.validation()
         if(this.props.state.form.isVaild){

@@ -219,7 +219,7 @@
   }
 
 
-@media (min-width: 320px) and (max-width: 780px) , screen and (max-height: 450px) {
+@media (min-width: 320px) and (max-width: 780px){
     .back-card{
         top: 25rem;
     }

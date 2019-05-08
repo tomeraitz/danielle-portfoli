@@ -5,7 +5,7 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import './styles/home.css'
 import Loading from './components/Loading';
-
+import { IoIosPhoneLandscape } from "react-icons/io";
 
 class App extends Component {
   constructor(props){
@@ -22,16 +22,28 @@ class App extends Component {
   render() {
     if(this.props.state.data.isloaded){
       return (
-        <div className="App">
-          <div className="main">
-            <NavBar />
-            <Home />
+        <div>
+          <div className="App" id="app">
+            <div className="main">
+              <NavBar />
+              <Home />
+            </div>
+          </div>
+          <div id="rotate-app">
+              <h1>Plese rotate Your device</h1>
+              <IoIosPhoneLandscape className="phone-rotate"/>
           </div>
         </div>
       );
     }
     else{
-      return <Loading />
+      return (<div>
+          <Loading/>
+          <div id="rotate-app">
+            <h1>Plese rotate Your device</h1>
+            <IoIosPhoneLandscape className="phone-rotate"/>
+          </div>
+      </div>)
     }
     
   }

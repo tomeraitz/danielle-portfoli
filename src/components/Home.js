@@ -5,6 +5,8 @@ import '../styles/home.css'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 
+
+
 class Home extends Component {
   constructor(props){
     super()
