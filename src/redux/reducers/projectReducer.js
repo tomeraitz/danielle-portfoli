@@ -10,39 +10,75 @@ let initializeState = {
     project : [
         {
             indexOfImages : 0,
-            title : "Project 1",
-            subTitle : "sub title 1",
+            title : {
+                1 : "פרויקט 1",
+                0 : "Project 1"
+            },
+            subTitle :{
+                1 : "תת כותרת 1",
+                0 : "sub title 1"
+            },
             mainImage : mainImag,
             className : "item",
             gallery : [mainImag, imag, imag, imag,],
-            description : `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
-                           Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
-                           No mea tale salutandi. Inani atomorum constituam his no, 
-                           an mea probatus adipisci.`
+            description :{
+                1 :     `לורם איפסום דולור סיט אמט,
+                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
+                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
+                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
+                      Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
+                      No mea tale salutandi. Inani atomorum constituam his no, 
+                      an mea probatus adipisci.`
+            }
         },
         {
             indexOfImages : 0,
-            title : "Project 2",
-            subTitle : "sub title 2",
+            title : {
+                1 : "פרויקט 2",
+                0 : "Project 2"
+            },
+            subTitle :{
+                1 : "תת כותרת 2",
+                0 : "sub title 2"
+            },
             mainImage : mainImag,
             className : "item",
             gallery : [mainImag, imag, imag],
-            description : `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
-                           Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
-                           No mea tale salutandi. Inani atomorum constituam his no, 
-                           an mea probatus adipisci.`
+            description :{
+                1 :     `לורם איפסום דולור סיט אמט,
+                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
+                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
+                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
+                      Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
+                      No mea tale salutandi. Inani atomorum constituam his no, 
+                      an mea probatus adipisci.`
+            }
         },
         {
             indexOfImages : 0,
-            title : "Project 3",
-            subTitle : "sub title 3",
+            title : {
+                1 : "פרויקט 3",
+                0 : "Project 3"
+            },
+            subTitle :{
+                1 : "תת כותרת 3",
+                0 : "sub title 3"
+            },
             mainImage : mainImag,
             className : "item",
             gallery : [mainImag, imag, imag],
-            description : `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
-                           Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
-                           No mea tale salutandi. Inani atomorum constituam his no, 
-                           an mea probatus adipisci.`
+            description :{
+                1 :     `לורם איפסום דולור סיט אמט,
+                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
+                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
+                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
+                      Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
+                      No mea tale salutandi. Inani atomorum constituam his no, 
+                      an mea probatus adipisci.`
+            }
         },
     ]
   }

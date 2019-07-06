@@ -21,13 +21,10 @@ class About extends Component {
         return(
                 <div className="about" >
                     <div className="about-container">
-                        <h1>About Me</h1>
-                        <p>Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
-                            Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
-                            No mea tale salutandi. Inani atomorum constituam his no, 
-                            an mea probatus adipisci.
+                        <h1>{this.props.state.data.thisAboutPageTitle[this.props.state.data.thisHeActive *1]}</h1>
+                        <p>{this.props.state.data.thisAboutPageDes[this.props.state.data.thisHeActive *1]}
                         </p>
-                        <div className="back" onClick={this.closeAbout}><FaArrowLeft /><span>Back</span></div>
+                        <div className="back" onClick={this.closeAbout}><FaArrowLeft /><span>{this.props.state.data.thisBackTtitle[this.props.state.data.thisHeActive *1]}</span></div>
                     </div>
                 </div>
             )

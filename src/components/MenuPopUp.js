@@ -37,16 +37,16 @@ class MenuPopUp extends Component {
                 <div className="menu-popup-container" >
                   <div className="list">
                     <div className="list-dropdow">
-                        <h1 onClick={this.dropDown}>Projects</h1>
-                        <div id="0" onClick={this.openProject} className={dropclss}>Project 1</div>
-                        <div id="1" onClick={this.openProject} className={dropclss}>Project 2</div>
-                        <div id="2" onClick={this.openProject} className={dropclss}>Project 3</div>
+                        <h1 onClick={this.dropDown}>{this.props.state.data.thisProjectsTtitle[this.props.state.data.thisHeActive *1]}</h1>
+                        <div id="0" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject1Ttitle[this.props.state.data.thisHeActive *1]}</div>
+                        <div id="1" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject2Ttitle[this.props.state.data.thisHeActive *1]}</div>
+                        <div id="2" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject3Ttitle[this.props.state.data.thisHeActive *1]}</div>
                     </div>
                     <div className="list-dropdow">
-                          <h1 onClick={this.openAbout}>About</h1>
+                          <h1 onClick={this.openAbout}>{this.props.state.data.thisAboutTtitle[this.props.state.data.thisHeActive *1]}</h1>
                     </div>
                     <div className="list-dropdow">
-                          <h1 onClick={this.openContact}>Contact</h1>
+                          <h1 onClick={this.openContact}>{this.props.state.data.thisContactTtitle[this.props.state.data.thisHeActive *1]}</h1>
                     </div>
                   </div>
                 </div>

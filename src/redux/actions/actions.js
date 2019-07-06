@@ -8,6 +8,13 @@ export const CLASS_NAME_DROP = 'nemu : changeclassNameDropDwon'
 export const TOGGLE_ABOUT = 'pages : about'
 export const TOGGLE_CONTACT = 'pages : contcat'
 export const LOADING_PAGE= 'app : loading' 
+export const CHAGE_LANG = "app : language"
+
+export function chngeLanguage(){
+    return {
+        type: CHAGE_LANG,
+    }
+}
 
 export function chngeLoadStatus(){
     return {

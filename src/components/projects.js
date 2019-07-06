@@ -48,10 +48,10 @@ class Projects extends Component {
                       <FaAngleRight className="right small-menu-right" />: <FaAngleLeft className="left small-menu-right" />}
                     </div>
                     <div className={this.props.state.projectsData.clssDescriptionMenu}>
-                        <h1 className="project-main-titlte">{project.title}</h1>
-                        <h3 className="project-sub-titlte">{project.subTitle}</h3>
+                        <h1 className="project-main-titlte">{project.title[this.props.state.data.thisHeActive *1]}</h1>
+                        <h3 className="project-sub-titlte">{project.subTitle[this.props.state.data.thisHeActive *1]}</h3>
                         <hr></hr>
-                        <p className="project-main-p">{project.description}</p>
+                        <p className="project-main-p">{project.description[this.props.state.data.thisHeActive *1]}</p>
           
                     </div>
                   </div>

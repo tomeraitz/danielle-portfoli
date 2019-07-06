@@ -50,17 +50,15 @@ class Contact extends Component {
         return(
                 <div className="about" >
                     <form className="form">
-                        <h1 className="form-title">Contact Me</h1>
-                        <div className="form-description">If you want to contact me, 
-                                                        send me your details by filling up the form below or 
-                                                        send an email to danielle571990@gmail.com
+                        <h1 className="form-title">{form.fromTtitle[this.props.state.data.thisHeActive *1]}</h1>
+                        <div className="form-description">{form.fromSubTtitle[this.props.state.data.thisHeActive *1]}
                         </div>
                         
                         <div className={form.formClassName}>
                        
                             <input className={form.InputSmallclassName} 
                                 type="text" id="name" 
-                                placeholder="Your Name" 
+                                placeholder={form.fromNamePlaceHolder[this.props.state.data.thisHeActive *1]} 
                                 name="name" 
                                 value={form.name} 
                                 onChange={this.handleFields} 
@@ -69,7 +67,7 @@ class Contact extends Component {
                             <input className={form.InputSmallclassName} 
                                 type="email" 
                                 id="email" 
-                                placeholder="Your Email" 
+                                placeholder={form.fromEmailPlaceHolder[this.props.state.data.thisHeActive *1]} 
                                 name="email" 
                                 value={form.email}  
                                 onChange={this.handleFields} 
@@ -78,7 +76,7 @@ class Contact extends Component {
                             <input className={form.InputSmallclassName} 
                                     type="number" 
                                     id="phone" 
-                                    placeholder="Your Phone" 
+                                    placeholder={form.fromPhonePlaceHolder[this.props.state.data.thisHeActive *1]}
                                     name="phone" 
                                     value={form.phone}   
                                     onChange={this.handleFields} 
@@ -87,28 +85,28 @@ class Contact extends Component {
                             <textarea className={form.InputBigclassName} 
                                     type="text"  
                                     name="message" 
-                                    placeholder="Message" 
+                                    placeholder={form.fromMessagePlaceHolder[this.props.state.data.thisHeActive *1]} 
                                     id="message" 
                                     value={form.message}  
                                     onChange={this.handleFields}
                                     >
                             </textarea>
-                            <div className="error">{form.error}</div>
+                            <div className="error">{form.error[this.props.state.data.thisHeActive *1]}</div>
                             <div className={form.InputButtonsclassName}>
                                 <div className="back form-buttons" onClick={this.submit}>
                                     <IoIosSend />
-                                    <span>submit</span>
+                                    <span>{form.fromSubmit[this.props.state.data.thisHeActive *1]}</span>
                                 </div>
                                 
                                 <div className="back form-buttons" onClick={this.closeContact}>
                                     <FaArrowLeft />
-                                    <span>Cancel</span>
+                                    <span>{form.fromCancel[this.props.state.data.thisHeActive *1]}</span>
                                 </div>
                             </div>
                         </div>
                         {form.formClassName === "form-details flip-back" ? 
                         <div className="back-card">
-                            <span>{form.sentAnser}</span>
+                            <span>{form.sentAnser[this.props.state.data.thisHeActive *1]}</span>
                             <div className="spinner" style={{display : form.display}}>
                                 <div className="bounce1"></div>
                                 <div className="bounce2"></div>

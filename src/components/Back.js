@@ -20,7 +20,7 @@ class Back extends Component {
   render (){
         return(
                 <div className="project-back" onClick={this.closeProject}>
-                    <FaArrowLeft /><span>Back</span>
+                    <FaArrowLeft /><span>{this.props.state.data.thisBackTtitle[this.props.state.data.thisHeActive *1]}</span>
                 </div>
             )
     }

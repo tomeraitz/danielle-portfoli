@@ -1,4 +1,4 @@
-import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NAME_DROP ,TOGGLE_ABOUT, TOGGLE_CONTACT, LOADING_PAGE} from '../actions/actions'
+import {SLIDER, SLIDER_LEFT ,SLIDER_RIGHT,TOGGLE, CLASS_NAME,STOP_LOOP, CLASS_NAME_DROP ,TOGGLE_ABOUT, TOGGLE_CONTACT, LOADING_PAGE, CHAGE_LANG} from '../actions/actions'
 import images from '../../consts/images'
 
 let initializeState = {
@@ -19,11 +19,71 @@ let initializeState = {
     isToggleContact : false,
     istoggle : false,
     counter : 0,
-    isloaded : false
+    isloaded : false,
+    thisHeActive : true,
+    thisEnActive : false,
+    thisMenuTtitle : {
+        1 : "תפריט",
+        0 : "Menu"
+    },
+    thisBackTtitle : {
+        1 : "אחורה",
+        0 : "Back"
+    },
+    thisProjectsTtitle : {
+        1 : "פרויקטים",
+        0 : "Projects"
+    },
+    thisProject1Ttitle : {
+        1 : "פרויקט 1",
+        0 : "Project 1"
+    },
+    thisProject2Ttitle : {
+        1 : "פרויקט 2",
+        0 : "Project 2"
+    },
+    thisProject3Ttitle : {
+        1 : "פרויקט 3",
+        0 : "Project 3"
+    },
+    thisAboutTtitle : {
+        1 : "עלי",
+        0 : "About"
+    },
+    thisContactTtitle : {
+        1 : "צור קשר",
+        0 : "Contact"
+    },
+    thisAboutPageTitle : {
+        1 : "קצת עלי",
+        0 : "About Me"
+    },
+    thisAboutPageDes: {
+        1 :     `לורם איפסום דולור סיט אמט,
+                קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
+                מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
+                לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+        0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
+              Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
+              No mea tale salutandi. Inani atomorum constituam his no, 
+              an mea probatus adipisci.`
+    },
   }
 
 export default function mainReducer (state=initializeState, {type, payload}){
     switch(type){
+
+        case CHAGE_LANG:
+            let newStateLang = {...state}
+            if(newStateLang.thisHeActive){
+                newStateLang.thisHeActive = false;
+                newStateLang.thisEnActive =true
+            }
+            else{
+                newStateLang.thisHeActive = true;
+                newStateLang.thisEnActive =false 
+            }
+            return newStateLang
 
         case LOADING_PAGE:
             let newStateLoading = {...state}
