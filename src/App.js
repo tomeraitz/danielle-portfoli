@@ -16,7 +16,8 @@ class App extends Component {
   loadApp = () => this.props.chngeLoadStatus()
 
   componentDidMount(){
-    setTimeout(this.loadApp,4000)
+    setTimeout(this.loadApp,4000);
+    // console.log = function() {}
   }
 
   render() {

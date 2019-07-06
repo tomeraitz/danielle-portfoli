@@ -62,10 +62,11 @@ class Home extends Component {
                                 </div>
                       }
                   })}
+                  {!this.props.state.data.isToggleAbout && !this.props.state.data.isToggleContact ?  
                       <div className="slider-arrows">
                         <FaAngleLeft onClick={this.left} className="left"/>
                         <FaAngleRight onClick={this.right} className="right"/>
-                      </div>
+                      </div> : null}
                 </div>
             )
     }
