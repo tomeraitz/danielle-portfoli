@@ -24,7 +24,8 @@ let initializeState = {
       0 : "Contact Me"
     },
     fromSubTtitle : {
-      1 : ` אם אתה מעוניין ליצור קשר אנא מלא את הפרטים מתחת או תשלח לי מייל ל danielle571990@gmail.com`,
+      1 : ` אם אתה מעוניין ליצור קשר אנא מלא את הפרטים מתחת או תשלח לי מייל ל 
+      \ndanielle571990@gmail.com`,
       0 : `If you want to contact me, 
            send me your details by filling up the form below or 
           send an email to danielle571990@gmail.com`

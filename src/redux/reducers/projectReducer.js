@@ -1,6 +1,18 @@
 import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_LEFT, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_MENUE} from '../actions/projectsActions'
 import imag from '../../images/Missing-image-232x150.png'
 import mainImag from '../../images/living-room-spatial-apartment-architecture-buildings-cbb521-1024-min.jpg'
+
+import imgProject1 from '../../images/graduation-project/2-min.jpg'
+import imgProject2 from '../../images/graduation-project/3-min.jpg'
+import imgProject3 from '../../images/graduation-project/4-min.jpg'
+import imgProject4 from '../../images/graduation-project/5-min.jpg'
+import imgProject5 from '../../images/graduation-project/6-min.jpg'
+import imgProject6 from '../../images/graduation-project/7-min.jpg'
+import imgProject7 from '../../images/graduation-project/8-min.jpg'
+import imgProject8 from '../../images/graduation-project/9-min.jpg'
+import imgProject9 from '../../images/graduation-project/10-min.jpg'
+import imgProject10 from '../../images/graduation-project/11-min.jpg'
+
 let initializeState = {
     currentProject : -1,
     clssDescriptionMenu : "project-details",
@@ -11,16 +23,16 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : "פרויקט 1",
+                1 : "מרכז תרבות ופנאי רב גילי-פרויקט גמר",
                 0 : "Project 1"
             },
             subTitle :{
                 1 : "תת כותרת 1",
                 0 : "sub title 1"
             },
-            mainImage : mainImag,
+            mainImage : imgProject1,
             className : "item",
-            gallery : [mainImag, imag, imag, imag,],
+            gallery : [imgProject1, imgProject2, imgProject3, imgProject4, imgProject5, imgProject6, imgProject7, imgProject8, imgProject9, imgProject10],
             description :{
                 1 :     `לורם איפסום דולור סיט אמט,
                         קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 

@@ -50,7 +50,7 @@
 }
 
 .project-main-titlte{
-    font-size: 2rem;
+    font-size: 1.9rem;
 }
 
 .project-sub-titlte{
@@ -219,6 +219,10 @@ hr{
 
     .project-main-p{
         font-size: small;
+    }
+
+    .project-back{
+        width: 5em;
     }
 
     @keyframes slide-right-small-menu{

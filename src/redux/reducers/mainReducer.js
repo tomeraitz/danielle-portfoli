@@ -35,7 +35,7 @@ let initializeState = {
         0 : "Projects"
     },
     thisProject1Ttitle : {
-        1 : "פרויקט 1",
+        1 : "מרכז תרבות ופנאי רב גילי-פרויקט גמר",
         0 : "Project 1"
     },
     thisProject2Ttitle : {
@@ -47,7 +47,7 @@ let initializeState = {
         0 : "Project 3"
     },
     thisAboutTtitle : {
-        1 : "עלי",
+        1 : "אודות",
         0 : "About"
     },
     thisContactTtitle : {

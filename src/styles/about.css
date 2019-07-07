@@ -11,6 +11,7 @@
     animation-direction: normal;
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
+    text-align: center;
 }
 
 .about-container{
@@ -31,6 +32,7 @@
     background-color: white;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    margin: 0 auto;
     width: 4em;
     height: 86%;
     padding: 10px;

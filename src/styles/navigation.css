@@ -295,11 +295,17 @@ to{
 
 @media (min-width: 320px) and (max-width: 780px){
     .col-3{
-        grid-column-start: 3;
+        grid-column-start: 4;
+        justify-self: flex-start;
     }
 
+    .menu{
+        width: 6em;
+    } 
+
     .lang{
-        grid-column-start: 5;
+        grid-column-start: 6;
+        margin-right: 10px;
         font-size: 1em;
     }
   }
