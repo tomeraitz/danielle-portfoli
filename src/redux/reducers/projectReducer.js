@@ -35,21 +35,22 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : "מרכז תרבות ופנאי רב גילי-פרויקט גמר",
+                1 : "מרכז תרבות ופנאי רב גילי",
                 0 : "Project 1"
             },
             subTitle :{
-                1 : "תת כותרת 1",
+                1 : "פרויקט גמר",
                 0 : "sub title 1"
             },
             mainImage : imgProject1,
             className : "item",
             gallery : [imgProject1, imgProject2, imgProject3, imgProject4, imgProject5, imgProject6, imgProject7, imgProject8, imgProject9, imgProject10,imgProject11, imgProject12, imgProject13, imgProject14, imgProject15, imgProject16, imgProject17],
             description :{
-                1 :     `לורם איפסום דולור סיט אמט,
-                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
-                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
-                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                1 :    `מרכז תרבות ופנאי רב גילי מהווה מרכז תרבות העשרה ופנאי בו מתקיימות פעילויות מגוונות לאוכלוסיה בכל גיל. במרכז פועלים לפי האמונה כי הגיל השלישי הנו הגיל בו היכולת והזמן סוף כל סוף נפגשים.
+                המרכז יהווה מקום לטיפוח יכולת הגשמה עצמית, העשרת ידע, נגישות לכל, מבחר תכנים תרבותיים ושפע הרצאות וחוגים.
+                המרכז משלב גלריה בעלת חלל מרכזי, חדשני ומעוצב להצגת תערוכות תחמוני האומנות השונים. 
+                המבנה מתוכנן על פי עקרונות אקולוגים, האור מהווה את אחד המרכיבים החשובים הקשורים בשיקולי תכנון המבנה. היכרות והבנה של מסלולי התנועה של האור, מאפשרים ליישם בכל חזית של הבניין פתרון תכנוני מתאים.
+                `,
                 0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
                       Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
                       No mea tale salutandi. Inani atomorum constituam his no, 
@@ -71,9 +72,7 @@ let initializeState = {
             gallery : [imgWashington1, imgWashington2, imgWashington3, imgWashington4],
             description :{
                 1 :     `לורם איפסום דולור סיט אמט,
-                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
-                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
-                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף,  `,
                 0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
                       Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
                       No mea tale salutandi. Inani atomorum constituam his no, 
