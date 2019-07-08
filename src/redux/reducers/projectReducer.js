@@ -12,13 +12,15 @@ import imgProject7 from '../../images/graduation-project/8-min.jpg'
 import imgProject8 from '../../images/graduation-project/9-min.jpg'
 import imgProject9 from '../../images/graduation-project/10-min.jpg'
 import imgProject10 from '../../images/graduation-project/11-min.jpg'
-import imgProject11 from '../../images/graduation-project/14-min.png'
-import imgProject12 from '../../images/graduation-project/14a-min.png'
-import imgProject13 from '../../images/graduation-project/15-min.png'
-import imgProject14 from '../../images/graduation-project/16-min.png'
-import imgProject15 from '../../images/graduation-project/17-min.png'
-import imgProject16 from '../../images/graduation-project/18-min.png'
-import imgProject17 from '../../images/graduation-project/19-min.png'
+import imgProject11 from '../../images/graduation-project/12-min.jpg'
+import imgProject12 from '../../images/graduation-project/13-min.jpg'
+import imgProject13 from '../../images/graduation-project/14-min.png'
+import imgProject14 from '../../images/graduation-project/14a-min.png'
+import imgProject15 from '../../images/graduation-project/15-min.png'
+import imgProject16 from '../../images/graduation-project/16-min.png'
+import imgProject17 from '../../images/graduation-project/17-min.png'
+import imgProject18 from '../../images/graduation-project/18-min.png'
+import imgProject19 from '../../images/graduation-project/19-min.png'
 
 import imgWashington1 from '../../images/washington-project/1-1-min.jpg'
 import imgWashington2 from '../../images/washington-project/2-1-min.jpg'
@@ -44,7 +46,7 @@ let initializeState = {
             },
             mainImage : imgProject1,
             className : "item",
-            gallery : [imgProject1, imgProject2, imgProject3, imgProject4, imgProject5, imgProject6, imgProject7, imgProject8, imgProject9, imgProject10,imgProject11, imgProject12, imgProject13, imgProject14, imgProject15, imgProject16, imgProject17],
+            gallery : [imgProject1, imgProject2, imgProject3, imgProject4, imgProject5, imgProject6, imgProject7, imgProject8, imgProject9, imgProject10,imgProject11, imgProject12, imgProject13, imgProject14, imgProject15, imgProject16, imgProject17, imgProject18, imgProject19],
             description :{
                 1 :    `מרכז תרבות ופנאי רב גילי מהווה מרכז תרבות העשרה ופנאי בו מתקיימות פעילויות מגוונות לאוכלוסיה בכל גיל. במרכז פועלים לפי האמונה כי הגיל השלישי הנו הגיל בו היכולת והזמן סוף כל סוף נפגשים.
                 המרכז יהווה מקום לטיפוח יכולת הגשמה עצמית, העשרת ידע, נגישות לכל, מבחר תכנים תרבותיים ושפע הרצאות וחוגים.
