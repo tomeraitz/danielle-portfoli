@@ -20,6 +20,11 @@ import imgProject15 from '../../images/graduation-project/17-min.png'
 import imgProject16 from '../../images/graduation-project/18-min.png'
 import imgProject17 from '../../images/graduation-project/19-min.png'
 
+import imgWashington1 from '../../images/washington-project/1-1-min.jpg'
+import imgWashington2 from '../../images/washington-project/2-1-min.jpg'
+import imgWashington3 from '../../images/washington-project/3-1-min.jpg'
+import imgWashington4 from '../../images/washington-project/4-1-min.jpg'
+
 let initializeState = {
     currentProject : -1,
     clssDescriptionMenu : "project-details",
@@ -54,12 +59,36 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : "פרויקט 2",
+                1 : `בניין מגורים-וושינגטון תל אביב`,
                 0 : "Project 2"
             },
             subTitle :{
                 1 : "תת כותרת 2",
                 0 : "sub title 2"
+            },
+            mainImage : imgWashington1,
+            className : "item",
+            gallery : [imgWashington1, imgWashington2, imgWashington3, imgWashington4],
+            description :{
+                1 :     `לורם איפסום דולור סיט אמט,
+                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
+                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
+                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
+                      Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
+                      No mea tale salutandi. Inani atomorum constituam his no, 
+                      an mea probatus adipisci.`
+            }
+        },
+        {
+            indexOfImages : 0,
+            title : {
+                1 : `מלונית-תוספת לבניין מסחרי קיים ,פתח תקווה`,
+                0 : "Project 3"
+            },
+            subTitle :{
+                1 : "תת כותרת 3",
+                0 : "sub title 3"
             },
             mainImage : mainImag,
             className : "item",
@@ -78,12 +107,12 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : "פרויקט 3",
-                0 : "Project 3"
+                1 : `תוספת קומה לדירה בתל אביב`,
+                0 : "Project 4"
             },
             subTitle :{
-                1 : "תת כותרת 3",
-                0 : "sub title 3"
+                1 : "תת כותרת 4",
+                0 : "sub title 4"
             },
             mainImage : mainImag,
             className : "item",

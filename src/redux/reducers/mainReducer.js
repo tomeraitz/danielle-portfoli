@@ -39,11 +39,15 @@ let initializeState = {
         0 : "Project 1"
     },
     thisProject2Ttitle : {
-        1 : "פרויקט 2",
+        1 : "בניין מגורים-וושינגטון תל אביב",
         0 : "Project 2"
     },
     thisProject3Ttitle : {
-        1 : "פרויקט 3",
+        1 :  `מלונית-תוספת לבניין מסחרי קיים ,פתח תקווה`,
+        0 : "Project 3"
+    },
+    thisProject4Ttitle : {
+        1 :  `תוספת קומה לדירה בתל אביב`,
         0 : "Project 3"
     },
     thisAboutTtitle : {

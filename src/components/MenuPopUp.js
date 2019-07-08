@@ -41,6 +41,7 @@ class MenuPopUp extends Component {
                         <div id="0" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject1Ttitle[this.props.state.data.thisHeActive *1]}</div>
                         <div id="1" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject2Ttitle[this.props.state.data.thisHeActive *1]}</div>
                         <div id="2" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject3Ttitle[this.props.state.data.thisHeActive *1]}</div>
+                        <div id="3" onClick={this.openProject} className={dropclss}>{this.props.state.data.thisProject4Ttitle[this.props.state.data.thisHeActive *1]}</div>
                     </div>
                     <div className="list-dropdow">
                           <h1 onClick={this.openAbout}>{this.props.state.data.thisAboutTtitle[this.props.state.data.thisHeActive *1]}</h1>
