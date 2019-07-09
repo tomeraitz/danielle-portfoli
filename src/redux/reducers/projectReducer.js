@@ -27,6 +27,15 @@ import imgWashington2 from '../../images/washington-project/2-1-min.jpg'
 import imgWashington3 from '../../images/washington-project/3-1-min.jpg'
 import imgWashington4 from '../../images/washington-project/4-1-min.jpg'
 
+import imgRoof1 from '../../images/home-roof/1-1-min.jpg'
+import imgRoof2 from '../../images/home-roof/2-1-min.jpg'
+
+import imgHotel1 from '../../images/hotel/1-1-min.png'
+import imgHotel2 from '../../images/hotel/2-1-min.png'
+import imgHotel3 from '../../images/hotel/3-1-min.jpg'
+import imgHotel4 from '../../images/hotel/4-1-min.jpg'
+import imgHotel5 from '../../images/hotel/5-1-min.jpg'
+
 let initializeState = {
     currentProject : -1,
     clssDescriptionMenu : "project-details",
@@ -62,19 +71,21 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : `בניין מגורים-וושינגטון תל אביב`,
+                1 : `תכנון ועיצוב פרויקט מגורים`,
                 0 : "Project 2"
             },
             subTitle :{
-                1 : "תת כותרת 2",
+                1 : `שדרות וושינגטון ת"א`,
                 0 : "sub title 2"
             },
             mainImage : imgWashington1,
             className : "item",
             gallery : [imgWashington1, imgWashington2, imgWashington3, imgWashington4],
             description :{
-                1 :     `לורם איפסום דולור סיט אמט,
-                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף,  `,
+                1 :    `תכנון פרויקט מגורים במסגרת הלימודים האקדמיים.
+                מבנה בעל 4 קומות , בו מתוכננים 4 דירות, 
+                שילוב חנות סטודיו בקומת המרתף ומשרד בקומת הקרקע בצמוד ללובי הכניסה
+                `,
                 0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
                       Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
                       No mea tale salutandi. Inani atomorum constituam his no, 
@@ -84,21 +95,20 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : `מלונית-תוספת לבניין מסחרי קיים ,פתח תקווה`,
+                1 : `תכנון תוספת בנייה על הגג של 65% משטח הגג`,
                 0 : "Project 3"
             },
             subTitle :{
-                1 : "תת כותרת 3",
+                1 :`בניין מגורים ברחוב משה סנה ת"א`,
                 0 : "sub title 3"
             },
-            mainImage : mainImag,
+            mainImage : imgRoof1,
             className : "item",
-            gallery : [mainImag, imag, imag],
+            gallery : [imgRoof1, imgRoof2],
             description :{
-                1 :     `לורם איפסום דולור סיט אמט,
-                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
-                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
-                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                1 :    `תכנון תוכניות הגשה להיתר,
+                עפ"י תכנית בניין ערים "ג" בניה על גגות
+                `,
                 0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
                       Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
                       No mea tale salutandi. Inani atomorum constituam his no, 
@@ -108,27 +118,27 @@ let initializeState = {
         {
             indexOfImages : 0,
             title : {
-                1 : `תוספת קומה לדירה בתל אביב`,
+                1 : `תכנון תוספת קומה בבניין מסחרי קיים`,
                 0 : "Project 4"
             },
             subTitle :{
-                1 : "תת כותרת 4",
+                1 : "מלונית בפתח תקווה",
                 0 : "sub title 4"
             },
-            mainImage : mainImag,
+            mainImage : imgHotel1,
             className : "item",
-            gallery : [mainImag, imag, imag],
+            gallery : [imgHotel1,imgHotel2,imgHotel3,imgHotel4,imgHotel5],
             description :{
-                1 :     `לורם איפסום דולור סיט אמט,
-                        קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, 
-                        מרגשי ומרגשח. עמחליף לפרומי בלוף קינץ תתיח לרעח. 
-                        לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק.`,
+                1 :     `תכנון ועיצוב משלב ראשוני, הצגת רעיון תכנוני למכרז.
+                תכנון של שילוב אלמנטים –בין מלונית ואיזור סביבת עבודה wework
+                `,
                 0 :  `Lorem ipsum dolor sit amet, velit scripta omittantur usu eu. 
                       Eos an tantas vidisse euismod, usu eligendi scribentur ne. 
                       No mea tale salutandi. Inani atomorum constituam his no, 
                       an mea probatus adipisci.`
             }
         },
+
     ]
   }
 

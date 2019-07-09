@@ -35,19 +35,19 @@ let initializeState = {
         0 : "Projects"
     },
     thisProject1Ttitle : {
-        1 : "מרכז תרבות ופנאי רב גילי-פרויקט גמר",
+        1 : "מרכז תרבות ופנאי רב גילי",
         0 : "Project 1"
     },
     thisProject2Ttitle : {
-        1 : "בניין מגורים-וושינגטון תל אביב",
+        1 : "תכנון ועיצוב פרויקט מגורים",
         0 : "Project 2"
     },
-    thisProject3Ttitle : {
-        1 :  `מלונית-תוספת לבניין מסחרי קיים ,פתח תקווה`,
+    thisProject4Ttitle : {
+        1 :  `תכנון תוספת קומה בבניין מסחרי קיים`,
         0 : "Project 3"
     },
-    thisProject4Ttitle : {
-        1 :  `תוספת קומה לדירה בתל אביב`,
+    thisProject3Ttitle : {
+        1 : `תכנון תוספת בנייה על הגג של 65% משטח הגג`,
         0 : "Project 3"
     },
     thisAboutTtitle : {
