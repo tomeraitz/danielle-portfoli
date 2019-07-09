@@ -105,7 +105,31 @@ hr{
     top : 11em;
     margin: 0 auto;
 }
+.pop-up{
+    position: fixed;
+    z-index: 99999;
+    top: 10em;
+    width: 90%;
+    left: 2em;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 71%;
+    background-color: #fefeff;
+    animation: popup 0.7s;
+}
 
+.close-pop-up{
+    color: gray;
+    position: relative;
+    bottom: 100%;
+    left: 92%;
+    font-size: 4em;
+    font-weight: bold;
+}
+.zoom-in{
+    color: gray;
+    font-size: 3em;
+}
 .item{
     padding: 2%;
     cursor: pointer;
@@ -226,9 +250,16 @@ hr{
     }
 }
 
+@keyframes popup {
+    from{
+      transform: scale(0);
+    }
+    to{
+      transform: scale(1);
+    }
+  }
 
-
-@media (min-width: 320px) and (max-width: 928px) {
+@media (min-width: 700px) and (max-width: 928px) {
     .main-Project{
         position: relative;
         display: grid;
@@ -240,6 +271,74 @@ hr{
         margin: 0 auto;
         top: 10em;
         
+    }
+    .pop-up{
+        left: 1em;
+    }
+
+    .project-main-titlte{
+        font-size: 1rem;
+    }
+    
+    .project-sub-titlte{
+        font-size: 0.8rem;
+    }
+
+    .project-main-p{
+        font-size: small;
+    }
+
+    .project-back{
+        width: 5em;
+    }
+
+    @keyframes slide-right-small-menu{
+        from{
+            transform: translateX(0%);
+           
+        }
+        to{
+            transform: translateX(40vw);
+        }
+    }
+    
+    @keyframes slide-left-small-menu{
+        from{
+           
+            transform: translateX(40vw);
+           
+        }
+        to{
+            transform: translateX(0%);
+        }
+    }
+
+  }
+
+
+@media (min-width: 320px) and (max-width: 700px) {
+    .main-Project{
+        position: relative;
+        display: grid;
+        grid-template-columns: 45% 5% 50%;
+        width: 80%;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 0 auto;
+        top: 10em;
+        
+    }
+    .close-pop-up{
+        color: gray;
+        position: relative;
+        bottom: 100%;
+        left: 80%;
+        font-size: 4em;
+        font-weight: bold;
+    }
+    .pop-up{
+        left: 1em;
     }
 
     .project-main-titlte{

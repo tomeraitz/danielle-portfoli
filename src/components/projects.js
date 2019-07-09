@@ -1,10 +1,13 @@
 import React, { Component }  from "react";
 import { connect } from "react-redux";
 import {TOGGLE, STOP_LOOP} from '../redux/actions/actions'
-import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_IMAGE_INDEX_LEFT, CHANGE_MENUE} from '../redux/actions/projectsActions'
+import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_IMAGE_INDEX_LEFT, CHANGE_MENUE ,OPEN_POPUP} from '../redux/actions/projectsActions'
 import '../styles/projects.css'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
+import { IoIosClose } from "react-icons/io";
+import { TiZoomInOutline } from "react-icons/ti";
+
  
 
 class Projects extends Component {
@@ -32,6 +35,10 @@ class Projects extends Component {
 
   moveRight = () => this.props.changeImageIndexRight(this.props.state.projectsData.currentProject);
 
+  openPopUp = () => this.props.openPopUp(true)
+
+  closePopUp = () => this.props.openPopUp(false)
+
   changeMenu = () => {
     this.props.changeMenu(!this.props.state.projectsData.isToggalRightOrLeft)
   }
@@ -41,8 +48,15 @@ class Projects extends Component {
         let project = this.props.state.projectsData.project[this.props.state.projectsData.currentProject]
         return(
                 <div className="projects" >
+                  {this.props.state.projectsData.popUpToggal ?
+                  <div className="pop-up" onClick={this.closePopUp}>
+                    <img src={project.mainImage} width="100%" height="100%" />
+                    <IoIosClose className="close-pop-up" />
+                  </div> : null }
                   <div className="main-Project" style={{backgroundImage :`url(${project.mainImage})` }}>
-                    <div></div>
+                    <div  onClick={this.openPopUp}>
+                      <TiZoomInOutline className="zoom-in" />
+                    </div>
                     <div className={this.props.state.projectsData.clssButtonnMenu} onClick={this.changeMenu}>
                     {this.props.state.projectsData.arrowDeriction === "right" ?
                       <FaAngleRight className="right small-menu-right" />: <FaAngleLeft className="left small-menu-right" />}
@@ -71,6 +85,7 @@ class Projects extends Component {
                           {project.gallery.length > 3 ? <FaAngleRight className="right active-arrow" onClick={this.moveRight}/> : <FaAngleRight className="right hiedden-arrow"/>}
                         
                   </div>
+             
                 </div>
             )
     }
@@ -86,6 +101,7 @@ class Projects extends Component {
             changeImageIndexRight : (index) => dispatch({type : CHANGE_IMAGE_INDEX_RIGHT,payload: index}),
             changeImageIndexLeft : (index) => dispatch({type : CHANGE_IMAGE_INDEX_LEFT,payload: index}),
             changeMenu: (isRight) => dispatch({type : CHANGE_MENUE,payload: isRight}),
+            openPopUp: (isPopUp) => dispatch({type : OPEN_POPUP,payload: isPopUp}),
     })
   }
 

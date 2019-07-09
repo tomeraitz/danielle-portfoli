@@ -3,6 +3,15 @@ export const CHANGE_IMAGE = 'projects : images'
 export const CHANGE_IMAGE_INDEX_LEFT = 'projects : imagesLeft'
 export const CHANGE_IMAGE_INDEX_RIGHT= 'projects : imagesRight'
 export const CHANGE_MENUE = 'projects : menueAction'
+export const OPEN_POPUP= 'projects : popUp'
+
+export function openPopUp(isPopUp){
+    return {
+        type: OPEN_POPUP,
+        payload : isPopUp
+    }
+    
+}
 
 export function changeMenu(isRight){
     return {

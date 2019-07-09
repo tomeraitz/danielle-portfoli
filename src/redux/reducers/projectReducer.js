@@ -1,6 +1,5 @@
-import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_LEFT, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_MENUE} from '../actions/projectsActions'
-import imag from '../../images/Missing-image-232x150.png'
-import mainImag from '../../images/living-room-spatial-apartment-architecture-buildings-cbb521-1024-min.jpg'
+import {CURRENT_PROJECT, CHANGE_IMAGE, CHANGE_IMAGE_INDEX_LEFT, CHANGE_IMAGE_INDEX_RIGHT, CHANGE_MENUE ,OPEN_POPUP} from '../actions/projectsActions'
+
 
 import imgProject1 from '../../images/graduation-project/2-min.jpg'
 import imgProject2 from '../../images/graduation-project/3-min.jpg'
@@ -42,6 +41,7 @@ let initializeState = {
     clssButtonnMenu : "detials-toggal",
     arrowDeriction : "right",
     isToggalRightOrLeft : false,
+    popUpToggal : false,
     project : [
         {
             indexOfImages : 0,
@@ -160,6 +160,11 @@ export default function mainReducer (state=initializeState, {type, payload}){
             
             newMenuState.isToggalRightOrLeft = payload
             return newMenuState
+
+            case OPEN_POPUP:
+                let newPopUpState = {...state}
+                newPopUpState.popUpToggal = payload
+                return newPopUpState
 
 
         case CHANGE_IMAGE_INDEX_RIGHT:
