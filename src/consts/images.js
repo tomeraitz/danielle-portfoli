@@ -9,6 +9,6 @@ import img8 from '../images/IMG_9715-min.JPG'
 import img9 from '../images/IMG_9976-min.JPG'
 import img10 from '../images/img1.jpg'
 
-const images = [img1,img8,img2, img3,img4,img5,img6,img7,img9,img10]
+const images = [img10,img8,img2,img1 ,img3,img4,img5,img6,img7,img9]
 
 export default images
