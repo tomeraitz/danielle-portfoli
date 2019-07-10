@@ -53,10 +53,11 @@ class Projects extends Component {
                     <img src={project.mainImage} width="100%" height="100%" />
                     <IoIosClose className="close-pop-up" />
                   </div> : null }
-                  <div className="main-Project" style={{backgroundImage :`url(${project.mainImage})` }}>
-                    <div  onClick={this.openPopUp}>
+                  <div className="main-Project">
+                  <div  onClick={this.openPopUp}>
                       <TiZoomInOutline className="zoom-in" />
                     </div>
+                  <img src={project.mainImage} id="main-image-slider"/>
                     <div className={this.props.state.projectsData.clssButtonnMenu} onClick={this.changeMenu}>
                     {this.props.state.projectsData.arrowDeriction === "right" ?
                       <FaAngleRight className="right small-menu-right" />: <FaAngleLeft className="left small-menu-right" />}

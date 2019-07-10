@@ -33,14 +33,16 @@
 .main-Project{
     position: relative;
     display: grid;
-    grid-template-columns: 7% 46% 25%;
-    width: 80%;
+    /* grid-template-rows: 100%; */
+    grid-template-columns: 0% 45.5% 0% 40%;
+    width: 50%;
     height: 50%;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center;
     margin: 0 auto;
     top: 10em;
+}
+#main-image-slider{
+    width : auto;
+    height: 100%;
 }
 
 .project-details{
@@ -74,11 +76,11 @@
 
 
 .project-main-titlte{
-    font-size: 1.9rem;
+    font-size: 1.4rem;
 }
 
 .project-sub-titlte{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 hr{
@@ -127,6 +129,7 @@ hr{
     font-weight: bold;
 }
 .zoom-in{
+    position: relative;
     color: gray;
     font-size: 3em;
 }
@@ -261,31 +264,28 @@ hr{
 
 @media (min-width: 700px) and (max-width: 928px) {
     .main-Project{
-        position: relative;
-        display: grid;
-        grid-template-columns: 45% 5% 50%;
-        width: 80%;
-        height: 50%;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        margin: 0 auto;
-        top: 10em;
-        
+        width: 100%;
+        margin-left: 10%;
+        grid-template-columns: 0vw 43vw 0vw 40vw;
+    }
+
+    #main-image-slider{
+        width : 82vw;
     }
     .pop-up{
         left: 1em;
     }
 
     .project-main-titlte{
-        font-size: 1rem;
+        font-size: 2rem;
     }
     
     .project-sub-titlte{
-        font-size: 0.8rem;
+        font-size: 1.5rem;
     }
 
     .project-main-p{
-        font-size: small;
+        font-size: 1.2rem;
     }
 
     .project-back{
@@ -317,17 +317,15 @@ hr{
 
 
 @media (min-width: 320px) and (max-width: 700px) {
+
     .main-Project{
-        position: relative;
-        display: grid;
-        grid-template-columns: 45% 5% 50%;
-        width: 80%;
-        height: 50%;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        margin: 0 auto;
-        top: 10em;
-        
+        width: 100%;
+        margin-left: 10%;
+        grid-template-columns: 0vw 42vw 0vw 40vw;
+    }
+
+    #main-image-slider{
+        width : 82vw;
     }
     .close-pop-up{
         color: gray;
