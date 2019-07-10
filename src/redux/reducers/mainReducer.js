@@ -323,7 +323,7 @@ export default function mainReducer (state=initializeState, {type, payload}){
 
         case SLIDER:
             let newStateSlider = {...state}
-            if(payload === 3){
+            if(payload === 9){
                 newStateSlider.index = 0 
                 return newStateSlider
             }
@@ -334,7 +334,7 @@ export default function mainReducer (state=initializeState, {type, payload}){
 
         case SLIDER_LEFT:
             let newStateSliderL = {...state}
-            if(payload >= 3){
+            if(payload >= 9){
                 newStateSliderL.index = 0 
                 return newStateSliderL
             }
@@ -346,7 +346,7 @@ export default function mainReducer (state=initializeState, {type, payload}){
         case SLIDER_RIGHT:
             let newStateSliderR = {...state}
             if(payload <= 0){
-                newStateSliderR.index = 3 
+                newStateSliderR.index = 9 
                 return newStateSliderR
             }
             else{
