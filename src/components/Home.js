@@ -49,7 +49,7 @@ class Home extends Component {
 
   render (){
         return(
-                <div ref="home" className="home">
+                <div ref="home" className="home" >
                   {this.props.state.data.images.map((image , index) =>{
                       if(index === this.props.state.data.index){
                        return <div className="fade-in" key={image}>

@@ -24,7 +24,7 @@ class App extends Component {
     if(this.props.state.data.isloaded){
       return (
         <div>
-          <div className="App" id="app">
+          <div className="App" id="app" >
             <div className="main">
               <NavBar />
               <Home />
