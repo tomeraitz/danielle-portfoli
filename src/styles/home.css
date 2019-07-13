@@ -15,16 +15,13 @@
     z-index: 0; 
     overflow: hidden;
     display: block;
-    opacity: 1;
+    opacity: 0;
     height: 100vh;
     width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     animation-name: fadeIn;
     animation-timing-function: ease-in-out;
     animation-direction: normal;
-    animation-duration: 1.2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
   }
   #main-slider{
@@ -32,7 +29,19 @@
     height: 100%;
   }
   .fade-out{
-    display: none; 
+    position: fixed;
+    z-index: -100; 
+    overflow: hidden;
+    display: block;
+    opacity: 1;
+    height: 100vh;
+    width: 100%;
+    animation-name: fadeOut;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    /* display: none;  */
   }
 
   .slider-arrows{
@@ -83,7 +92,7 @@
 
    @keyframes fadeIn {
     from{
-      opacity: 0.5;
+      opacity: 0;
     }
     to{
       opacity: 1;
@@ -92,7 +101,7 @@
 
   @-moz-keyframes fadeIn { 
     from{
-      opacity: 0.5;
+      opacity: 0;
     }
     to{
       opacity: 1;
@@ -101,7 +110,7 @@
 
 @-webkit-keyframes fadeIn { 
   from{
-    opacity: 0.5;
+    opacity: 0;
   }
   to{
     opacity: 1;
@@ -110,10 +119,46 @@
 
 @-o-keyframes fadeIn { 
     from{
-      opacity: 0.5;
+      opacity: 0;
     }
     to{
       opacity: 1;
+    }
+  } 
+
+  @keyframes fadeOut {
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
+    }
+  }
+
+  @-moz-keyframes fadeOut { 
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
+    }
+  }
+
+@-webkit-keyframes fadeOut { 
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
+    }
+  }
+
+@-o-keyframes fadeOut { 
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
     }
   } 
 
