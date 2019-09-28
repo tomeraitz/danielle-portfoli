@@ -16,6 +16,26 @@ class App extends Component {
   loadApp = () => this.props.chngeLoadStatus()
 
   componentDidMount(){
+    this.props.state.data.images.forEach((picture) => {
+      const img = new Image();
+      img.src = picture.fileName;
+  });
+
+  for(let key in this.props.state.projectsData){
+    
+    if(key == "project"){
+     
+      for(let i =0; i < this.props.state.projectsData[key].length; i++){
+        // console.log("project : ", this.props.state.projectsData[key][i].gallery)
+        this.props.state.projectsData[key][i].gallery.forEach((picture) => {
+          const img = new Image();
+          img.src = picture.fileName;
+      });
+      }
+
+    }
+  }
+
     setTimeout(this.loadApp,4000);
     // console.log = function() {}
   }
