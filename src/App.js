@@ -17,7 +17,7 @@ class App extends Component {
   loadMainImges = () =>{
       this.props.state.data.images.forEach((picture) => {
         const img = new Image();
-        img.src = picture.fileName;
+        img.setAttribute("src", `${picture}`);
     });
   }
 
@@ -30,7 +30,7 @@ class App extends Component {
           // console.log("project : ", this.props.state.projectsData[key][i].gallery)
           this.props.state.projectsData[key][i].gallery.forEach((picture) => {
             const img = new Image();
-            img.src = picture.fileName;
+            img.setAttribute("src", `${picture}`);
         });
         }
       }
