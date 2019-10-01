@@ -64,12 +64,20 @@ class App extends Component {
   await cb();
   }
 
+  handleLoad = () =>{
+    console.log("loaded")
+    this.loadApp()
+    return;
+  }
+
   componentDidMount(){
+    window.addEventListener('load', this.handleLoad);
+
     console.log("before  this.loadMainImges")
    this.loadMainImges(()=>{
     console.log("before  this.loadProjectImages")
     this.loadProjectImages(()=>{
-      this.loadApp()
+    
       // window.location.reload();
     });
    });
