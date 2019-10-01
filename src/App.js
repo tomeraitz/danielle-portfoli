@@ -15,7 +15,6 @@ class App extends Component {
   loadApp = () => this.props.chngeLoadStatus()
 
   loadImage = (picture, cb) =>{
-    console.log(" picture : ", picture)
     const img = new Image();
     img.setAttribute("src", `${picture}`);
     cb();
@@ -73,14 +72,11 @@ class App extends Component {
   componentDidMount(){
     window.addEventListener('load', this.handleLoad);
 
-  //   console.log("before  this.loadMainImges")
-  //  this.loadMainImges(()=>{
-  //   console.log("before  this.loadProjectImages")
-  //   this.loadProjectImages(()=>{
-  //   });
-  //  });
-    // setTimeout(this.loadApp , 4000)
-  //  this.loadApp()
+   this.loadMainImges(()=>{
+    this.loadProjectImages(()=>{
+    });
+   });
+
   }
 
   render() {
