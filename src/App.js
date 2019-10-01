@@ -23,7 +23,7 @@ class App extends Component {
 
   daynimiceLoadind = (index, pictureArray, maxIndex, cb =undefined) =>{
       if(index > maxIndex -1){
-  return
+        return
       }
       else{
         this.loadImage(pictureArray[index], ()=>{
@@ -65,21 +65,12 @@ class App extends Component {
   }
 
   componentDidMount(){
-    if(localStorage.loadDanielleApp == undefined || localStorage.loadDanielleApp == 2){
-      localStorage.loadDanielleApp = 0;
-    }
-
+    console.log("before  this.loadMainImges")
    this.loadMainImges(()=>{
+    console.log("before  this.loadProjectImages")
     this.loadProjectImages(()=>{
-      setTimeout(this.loadApp, 4000)
-      
-      if(localStorage.loadDanielleApp == 0){
-        localStorage.loadDanielleApp++;
-        window.location.reload();
-      }
-      else{
-        localStorage.loadDanielleApp++;
-      }
+      this.loadApp()
+      // window.location.reload();
     });
    });
   }
