@@ -65,11 +65,21 @@ class App extends Component {
   }
 
   componentDidMount(){
-    console.log("before  this.loadMainImges")
+    if(localStorage.loadDanielleApp == undefined || localStorage.loadDanielleApp == 2){
+      localStorage.loadDanielleApp = 0;
+    }
+
    this.loadMainImges(()=>{
-    console.log("before  this.loadProjectImages")
     this.loadProjectImages(()=>{
       setTimeout(this.loadApp, 4000)
+      
+      if(localStorage.loadDanielleApp == 0){
+        localStorage.loadDanielleApp++;
+        window.location.reload();
+      }
+      else{
+        localStorage.loadDanielleApp++;
+      }
     });
    });
   }
