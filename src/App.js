@@ -14,34 +14,64 @@ class App extends Component {
   }
   loadApp = () => this.props.chngeLoadStatus()
 
-  loadMainImges = () =>{
-      this.props.state.data.images.forEach((picture) => {
-        const img = new Image();
-        img.setAttribute("src", `${picture}`);
-    });
+  loadImage = (picture, cb) =>{
+    console.log(" picture : ", picture)
+    const img = new Image();
+    img.setAttribute("src", `${picture}`);
+    cb();
   }
 
-  loadProjectImages = () =>{
+  daynimiceLoadind = (index, pictureArray, maxIndex, cb =undefined) =>{
+      if(index > maxIndex -1){
+  return
+      }
+      else{
+        this.loadImage(pictureArray[index], ()=>{
+          index++
+          this.daynimiceLoadind(index, pictureArray,  maxIndex)
+        });
+      }
+  }
+
+
+
+  async loadMainImges(cb){
+      let imagesArray = [];
+      this.props.state.data.images.forEach((picture) => {
+        imagesArray.push(picture)
+    });
+
+   await this.daynimiceLoadind(0, imagesArray, this.props.state.data.images.length)
+   await cb();
+  }
+
+  async loadProjectImages(cb){
+    let imagesArray = [];
+    let maxIndex = 0
     for(let key in this.props.state.projectsData){
-    
       if(key == "project"){
-       
+        maxIndex = this.props.state.projectsData[key].length;
+    
         for(let i =0; i < this.props.state.projectsData[key].length; i++){
-          // console.log("project : ", this.props.state.projectsData[key][i].gallery)
           this.props.state.projectsData[key][i].gallery.forEach((picture) => {
-            const img = new Image();
-            img.setAttribute("src", `${picture}`);
+            imagesArray.push(picture)
         });
         }
       }
     }
+
+  await  this.daynimiceLoadind(0, imagesArray, maxIndex)
+  await cb();
   }
 
- async componentDidMount(){
-  await this.loadMainImges();
-  await this.loadProjectImages();
-  await  setTimeout(this.loadApp,4000);
-    // console.log = function() {}
+  componentDidMount(){
+    console.log("before  this.loadMainImges")
+   this.loadMainImges(()=>{
+    console.log("before  this.loadProjectImages")
+    this.loadProjectImages(()=>{
+      setTimeout(this.loadApp, 4000)
+    });
+   });
   }
 
   render() {
