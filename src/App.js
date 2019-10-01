@@ -73,14 +73,14 @@ class App extends Component {
   componentDidMount(){
     window.addEventListener('load', this.handleLoad);
 
-    console.log("before  this.loadMainImges")
-   this.loadMainImges(()=>{
-    console.log("before  this.loadProjectImages")
-    this.loadProjectImages(()=>{
-    
-      // window.location.reload();
-    });
-   });
+  //   console.log("before  this.loadMainImges")
+  //  this.loadMainImges(()=>{
+  //   console.log("before  this.loadProjectImages")
+  //   this.loadProjectImages(()=>{
+  //   });
+  //  });
+    // setTimeout(this.loadApp , 4000)
+  //  this.loadApp()
   }
 
   render() {
