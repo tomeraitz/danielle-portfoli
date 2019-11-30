@@ -13,8 +13,6 @@ class App extends Component {
     this.props = props
   }
 
-  addEventListenerLoad = () => window.addEventListener('load', this.props.chngeLoadStatus());
-
   componentDidMount(){
     setTimeout(this.addEventListenerLoad , 3000)
   }
