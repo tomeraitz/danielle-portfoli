@@ -19,7 +19,7 @@ let initializeState = {
     isToggleContact : false,
     istoggle : false,
     counter : 0,
-    isloaded : true,
+    isloaded : false,
     thisHeActive : true,
     thisEnActive : false,
     thisMenuTtitle : {
