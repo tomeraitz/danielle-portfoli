@@ -21,6 +21,7 @@ export function chngeLanguage() {
 export function chngeLoadStatus() {
     if (navigator.onLine && window.location.hostname !== 'localhost') {
         return async function (dispatch) {
+            console.log("In chngeLoadStatus")
             await axios.get(`/appStarted`)
                 .then(response => {
                     console.log("response : ", response)
