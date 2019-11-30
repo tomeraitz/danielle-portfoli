@@ -12,71 +12,11 @@ class App extends Component {
     super()
     this.props = props
   }
-  loadApp = () => this.props.chngeLoadStatus()
 
-  loadImage = (picture, cb) =>{
-    const img = new Image();
-    img.setAttribute("src", `${picture}`);
-    cb();
-  }
-
-  daynimiceLoadind = (index, pictureArray, maxIndex, cb =undefined) =>{
-      if(index > maxIndex -1){
-        return
-      }
-      else{
-        this.loadImage(pictureArray[index], ()=>{
-          index++
-          this.daynimiceLoadind(index, pictureArray,  maxIndex)
-        });
-      }
-  }
-
-
-
-  async loadMainImges(cb){
-      let imagesArray = [];
-      this.props.state.data.images.forEach((picture) => {
-        imagesArray.push(picture)
-    });
-
-   await this.daynimiceLoadind(0, imagesArray, this.props.state.data.images.length)
-   await cb();
-  }
-
-  async loadProjectImages(cb){
-    let imagesArray = [];
-    let maxIndex = 0
-    for(let key in this.props.state.projectsData){
-      if(key == "project"){
-        maxIndex = this.props.state.projectsData[key].length;
-    
-        for(let i =0; i < this.props.state.projectsData[key].length; i++){
-          this.props.state.projectsData[key][i].gallery.forEach((picture) => {
-            imagesArray.push(picture)
-        });
-        }
-      }
-    }
-
-  await  this.daynimiceLoadind(0, imagesArray, maxIndex)
-  await cb();
-  }
-
-  handleLoad = () =>{
-    console.log("loaded")
-    this.loadApp()
-    return;
-  }
+  addEventListenerLoad = () => window.addEventListener('load', this.props.chngeLoadStatus());
 
   componentDidMount(){
-    window.addEventListener('load', this.handleLoad);
-
-   this.loadMainImges(()=>{
-    this.loadProjectImages(()=>{
-    });
-   });
-
+    setTimeout(this.addEventListenerLoad , 3000)
   }
 
   render() {
