@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    setTimeout(this.addEventListenerLoad , 3000)
+    setTimeout(this.props.chngeLoadStatus , 3000)
   }
 
   render() {
