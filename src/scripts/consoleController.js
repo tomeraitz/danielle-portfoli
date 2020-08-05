@@ -18,6 +18,6 @@ var logger = function()
                         };
 
     return pub;
-}();
+};
 
 export default logger
