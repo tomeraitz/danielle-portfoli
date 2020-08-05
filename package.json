@@ -18,9 +18,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev-start": "node scripts/start.js",
-    "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
-    "test": "node scripts/test.js",
+    "build": "react-scripts build",   
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
