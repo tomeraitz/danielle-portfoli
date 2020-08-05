@@ -11,7 +11,6 @@ export function sendToMail(mail){
           .then(response => {
               console.log("response.data : ", response.data)
              dispatch({type : MAIL_STATUS ,payload: response.data})
-             
           })
           .catch(error => {
           console.log(error);
