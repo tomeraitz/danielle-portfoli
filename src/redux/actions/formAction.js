@@ -9,6 +9,7 @@ export function sendToMail(mail){
     return  function(dispatch){
           axios.post(`https://mail-tomer-api.herokuapp.com/index.php/danielleApi` , mail)
           .then(response => {
+              console.log("response.data : ", response.data)
              dispatch({type : MAIL_STATUS ,payload: response.data})
              
           })
