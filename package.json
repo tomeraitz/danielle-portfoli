@@ -17,9 +17,9 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev-start": "node scripts/start.js",
-    "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
+    "start": "react-scripts start",
+    "build": "CI=false && npm install && npm run build.",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
