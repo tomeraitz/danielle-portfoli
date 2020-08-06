@@ -31,26 +31,28 @@ class Server {
 
   findPort(){
     //for production enviroment
+    console.log('production')
+    this.app.use(this.express.static(this.path.join(__dirname, 'build')));
+    this.app.get('*',  (req, res)=> {
+      res.setHeader("Cache-Control", "public, max-age=2592000");
+      res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
+      res.sendFile(this.path.join(__dirname, 'build', 'index.html'));
+    })
+    this.app.use( (req, res, next)=> {
+      res.header('Access-Control-Allow-Origin', '*')
+      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
+      res.header('Access-Control-Allow-Credentials', true);
+      next()
+    })
     if (process.env.PORT) 
     {
-      console.log('production')
-      this.app.use(this.express.static(this.path.join(__dirname, 'build')));
-      this.app.get('*',  (req, res)=> {
-        res.setHeader("Cache-Control", "public, max-age=2592000");
-        res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
-        res.sendFile(this.path.join(__dirname, 'build', 'index.html'));
-      })
+
     } 
     // for dev enviroment
     else 
     {
-      this.app.use( (req, res, next)=> {
-        res.header('Access-Control-Allow-Origin', '*')
-        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
-        res.header('Access-Control-Allow-Credentials', true);
-        next()
-      })
+ 
     }
   }
 
