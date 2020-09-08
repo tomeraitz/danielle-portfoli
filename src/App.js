@@ -35,6 +35,7 @@ class App extends Component {
     else{
       const img = new Image();
       img.src = array[i];
+      window[array[i]] = img;
       this.loadImage(array, i + 1)
     }
 
