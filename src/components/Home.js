@@ -4,7 +4,7 @@ import {SLIDER , SLIDER_LEFT , SLIDER_RIGHT ,CLASS_NAME, STOP_LOOP} from '../red
 import '../styles/home.css'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 
 class Home extends Component {
@@ -16,7 +16,6 @@ class Home extends Component {
  componentDidMount() {
     this.props.stopLoop(false);
     this.slider();
-
   }
 
   slider = () =>{
@@ -54,12 +53,12 @@ class Home extends Component {
                   {this.props.state.data.images.map((image , index) =>{
                       if(index === this.props.state.data.index){
                        return <div className="fade-in" key={image}>
-                                <LazyLoadImage alt="slider" id="main-slider"src={image} />
+                                <img alt="slider" id="main-slider"src={image} ></img>
                               </div>
                       }
                       else{
                         return <div className="fade-out" key={image}>
-                                  <LazyLoadImage alt="slider" id="main-slider"src={image} />
+                                  <img alt="slider" id="main-slider"src={image} ></img>
                                 </div>
                       }
                   })}

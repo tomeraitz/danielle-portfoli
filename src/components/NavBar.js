@@ -9,7 +9,7 @@ import Projects from "./projects";
 import logo from '../images/logo.png'
 import Back from "./Back";
 import Contact from "./Contact";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 class NavBar extends Component {
   constructor(props){
@@ -34,7 +34,7 @@ class NavBar extends Component {
         return(
                 <div className="nav-container" >
                     <div className="logo">
-                      <LazyLoadImage alt="logo" src={logo} width="100%" height="100%" />
+                      <img alt="logo" src={logo} width="100%" height="100%"></img>
                     </div>
                     <div className="col-3">
                       <div className="menu">
