@@ -5,6 +5,7 @@ import Loading from './components/Loading';
 import './styles/home.css'
 import { IoIosPhoneLandscape } from "react-icons/io";
 
+
 const Main = lazy(() => {
   return new Promise(resolve => {
     setTimeout(() => resolve(import('./components/Main')), 5000);
@@ -14,22 +15,30 @@ const Main = lazy(() => {
 class App extends Component {
   constructor(props){
     super()
-    this.props = props
+    this.props = props;
   }
 
   componentDidMount(){
-    this.props.state.data.images.forEach((picture) => {
-      const img = new Image();
-      img.src = picture;
-  });
-  this.props.state.projectsData.project.forEach((project)=>{
+    let imageArray = [...this.props.state.data.images]
+    this.props.state.projectsData.project.forEach((project)=>{
     project.gallery.forEach((picture) => {
-      const img = new Image();
-      img.src = picture;
+      imageArray.push(picture)
     });
   })
+  this.loadImage(imageArray)
   }
+  loadImage = (array, i=0) =>{
+    if(i === array.length){
+      console.log("finished!")
+      return
+    }
+    else{
+      const img = new Image();
+      img.src = array[i];
+      this.loadImage(array, i + 1)
+    }
 
+  }
   render() {
     return (
       <div>
