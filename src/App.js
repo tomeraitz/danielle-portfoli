@@ -8,7 +8,8 @@ var completeLoadImages = false;
 
 const Main = lazy(() => {
   return new Promise(resolve => {
-    setTimeout(isCompleteLoad, 1000, resolve)
+    // setTimeout(isCompleteLoad, 1000, resolve)
+    setTimeout(()=>resolve(import('./components/Main')),5000)
   });
 });
 
@@ -28,13 +29,13 @@ class App extends Component {
   }
 
   componentDidMount(){
-    let imageArray = [...this.props.state.data.images]
-    this.props.state.projectsData.project.forEach((project)=>{
-    project.gallery.forEach((picture) => {
-      imageArray.push(picture)
-    });
-  })
-  this.loadImage(imageArray)
+  //   let imageArray = [...this.props.state.data.images]
+  //   this.props.state.projectsData.project.forEach((project)=>{
+  //   project.gallery.forEach((picture) => {
+  //     imageArray.push(picture)
+  //   });
+  // })
+  // this.loadImage(imageArray)
   }
 
   loadImage = (array, i=0) =>{
