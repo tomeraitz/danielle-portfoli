@@ -20,8 +20,14 @@ class App extends Component {
   componentDidMount(){
     this.props.state.data.images.forEach((picture) => {
       const img = new Image();
-      img.src = picture.fileName;
+      img.src = picture;
   });
+  this.props.state.projectsData.project.forEach((project)=>{
+    project.gallery.forEach((picture) => {
+      const img = new Image();
+      img.src = picture;
+    });
+  })
   }
 
   render() {
