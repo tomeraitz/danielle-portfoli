@@ -16,8 +16,26 @@ class Home extends Component {
  componentDidMount() {
     this.props.stopLoop(false);
     this.slider();
+    let imageArray = [];
+    this.props.state.projectsData.project.forEach((project)=>{
+    project.gallery.forEach((picture) => {
+      imageArray.push(picture)
+    });
+  })
+  this.loadImage(imageArray);
   }
-
+  loadImage = (array, i=0) =>{
+    if(i === array.length){
+      console.log("finished!")
+      return
+    }
+    else{
+      const img = new Image();
+      img.src = array[i];
+      window[array[i]] = img;
+      this.loadImage(array, i + 1)
+    }
+  }
   slider = () =>{
     if(this.props.state.data.stopLoop === true){
       let nextAt = new Date().getTime() +500

@@ -19,13 +19,13 @@ class App extends Component {
   }
 
   componentDidMount(){
-    let imageArray = [...this.props.state.data.images]
-    this.props.state.projectsData.project.forEach((project)=>{
-    project.gallery.forEach((picture) => {
-      imageArray.push(picture)
-    });
-  })
-  this.loadImage(imageArray)
+  //   let imageArray = [...this.props.state.data.images]
+  //   this.props.state.projectsData.project.forEach((project)=>{
+  //   project.gallery.forEach((picture) => {
+  //     imageArray.push(picture)
+  //   });
+  // })
+  this.loadImage(this.props.state.data.images)
   }
   loadImage = (array, i=0) =>{
     if(i === array.length){
@@ -38,7 +38,6 @@ class App extends Component {
       window[array[i]] = img;
       this.loadImage(array, i + 1)
     }
-
   }
   render() {
     return (
