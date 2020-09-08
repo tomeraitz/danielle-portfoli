@@ -17,18 +17,18 @@ class App extends Component {
     this.props = props
   }
 
-  componentDidMount(){
-    this.props.state.data.images.forEach((picture) => {
-      const img = new Image();
-      img.src = picture;
-  });
-  this.props.state.projectsData.project.forEach((project)=>{
-    project.gallery.forEach((picture) => {
-      const img = new Image();
-      img.src = picture;
-    });
-  })
-  }
+  // componentDidMount(){
+  //   this.props.state.data.images.forEach((picture) => {
+  //     const img = new Image();
+  //     img.src = picture;
+  // });
+  // this.props.state.projectsData.project.forEach((project)=>{
+  //   project.gallery.forEach((picture) => {
+  //     const img = new Image();
+  //     img.src = picture;
+  //   });
+  // })
+  // }
 
   render() {
     return (

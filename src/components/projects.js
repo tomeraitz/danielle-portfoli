@@ -7,7 +7,7 @@ import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import { IoIosClose } from "react-icons/io";
 import { TiZoomInOutline } from "react-icons/ti";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
  
 
 class Projects extends Component {
@@ -50,14 +50,14 @@ class Projects extends Component {
                 <div className="projects" >
                   {this.props.state.projectsData.popUpToggal ?
                   <div className="pop-up" onClick={this.closePopUp}>
-                    <img src={project.mainImage} width="100%" height="100%" />
+                    <LazyLoadImage src={project.mainImage} width="100%" height="100%" />
                     <IoIosClose className="close-pop-up" />
                   </div> : null }
                   <div className="main-Project">
                   <div  onClick={this.openPopUp}>
                       <TiZoomInOutline className="zoom-in" />
                     </div>
-                  <img src={project.mainImage} id="main-image-slider"/>
+                  <LazyLoadImage src={project.mainImage} id="main-image-slider"/>
                     <div className={this.props.state.projectsData.clssButtonnMenu} onClick={this.changeMenu}>
                     {this.props.state.projectsData.arrowDeriction === "right" ?
                       <FaAngleRight className="right small-menu-right" />: <FaAngleLeft className="left small-menu-right" />}
@@ -76,7 +76,7 @@ class Projects extends Component {
                       
                           {project.gallery.map((name,index) =>{
                             if(index <= project.indexOfImages + 2 && index >= project.indexOfImages){
-                              return <img key={index} id={this.props.state.projectsData.currentProject} className={project.className} alt="project photos" width="25%" height="80%" src={name} onClick={this.changePhoto}/>
+                              return <LazyLoadImage key={index} id={this.props.state.projectsData.currentProject} className={project.className} alt="project photos" width="25%" height="80%" src={name} onClick={this.changePhoto}/>
                             }
                             else{
                               return null;
