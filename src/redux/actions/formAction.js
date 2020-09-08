@@ -8,7 +8,7 @@ export const VAILDTION = 'form : vaildation'
 export function sendToMail(mail){
     return  function(dispatch){
         let dataMail = JSON.stringify(mail)
-          axios.post(`http://mail-tomer-api.herokuapp.com/index.php/danielleApi` , dataMail)
+          axios.post(`${process.env.REACT_APP_API_Mail}` , dataMail)
           .then(response => {
               console.log("response.data : ", response.data)
              dispatch({type : MAIL_STATUS ,payload: response.data})

@@ -10,6 +10,7 @@
     "express": "^4.17.1",
     "fork-ts-checker-webpack-plugin": "^5.0.14",
     "fork-ts-checker-webpack-plugin-alt": "^0.4.14",
+    "gzipper": "^4.0.2",
     "normalize.css": "^8.0.1",
     "react": "^16.10.0",
     "react-dom": "^16.8.6",
@@ -22,7 +23,7 @@
   "scripts": {
     "start": "node server.js",
     "dev-start": "node scripts/start.js",
-    "build": "react-scripts build",
+    "build": "react-scripts build && gzipper compress ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
