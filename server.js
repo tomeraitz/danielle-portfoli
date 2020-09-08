@@ -26,7 +26,7 @@ class Server {
     this.app.use(this.bodyParser.urlencoded({extended: false}));
     this.app.use(this.bodyParser.json());
     this.app.use(this.compression());
-    process.env.PORT ? this.port = process.env.PORT : this.port = 8000
+    process.env.PORT ? this.port = process.env.PORT : this.port = 8010
   }
 
   findPort(){

@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component ,lazy, Suspense} from 'react';
 import { connect } from "react-redux";
 import {LOADING_PAGE} from './redux/actions/actions'
-import Home from './components/Home';
-import NavBar from './components/NavBar';
-import './styles/home.css'
 import Loading from './components/Loading';
+import './styles/home.css'
 import { IoIosPhoneLandscape } from "react-icons/io";
+
+const Main = lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/Main')), 5000);
+  });
+});
 
 class App extends Component {
   constructor(props){
@@ -14,42 +18,30 @@ class App extends Component {
   }
 
   componentDidMount(){
-    setTimeout(this.props.chngeLoadStatus , 3000)
+    // setTimeout(this.props.chngeLoadStatus , 3000)
+    this.props.chngeLoadStatus();
   }
 
   render() {
-    if(this.props.state.data.isloaded){
-      return (
+    return (
+      <div>
+        <Suspense fallback={
         <div>
-          <div className="App" id="app" >
-            <div className="main">
-              <NavBar />
-              <Home />
-            </div>
-          </div>
-          <div id="rotate-app">
-              <h1>Plese rotate Your device</h1>
-              <IoIosPhoneLandscape className="phone-rotate"/>
-          </div>
-        </div>
-      );
-    }
-    else{
-      return (<div>
           <Loading/>
           <div id="rotate-app">
             <h1>Plese rotate Your device</h1>
             <IoIosPhoneLandscape className="phone-rotate"/>
           </div>
-      </div>)
-    }
-    
+        </div>}>
+          <Main></Main>
+        </Suspense>
+       </div>
+    )
   }
 }
   function mapDispatchToProps(dispatch) {
     return({
       chngeLoadStatus : () => dispatch({type : LOADING_PAGE}),
-        
         
     })
   }
@@ -61,3 +53,5 @@ class App extends Component {
 }
 
   export default connect(mapStateToProps , mapDispatchToProps)(App);
+
+
