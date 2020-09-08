@@ -14,8 +14,9 @@ class Home extends Component {
   }
 
  componentDidMount() {
-    this.props.stopLoop(false)
-    this.slider()
+    this.props.stopLoop(false);
+    this.slider();
+
   }
 
   slider = () =>{

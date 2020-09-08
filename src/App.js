@@ -20,6 +20,10 @@ class App extends Component {
   componentDidMount(){
     // setTimeout(this.props.chngeLoadStatus , 3000)
     this.props.chngeLoadStatus();
+    this.props.state.data.images.forEach((picture) => {
+      const img = new Image();
+      img.src = picture.fileName;
+  });
   }
 
   render() {
