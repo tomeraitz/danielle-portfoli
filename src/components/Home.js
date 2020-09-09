@@ -19,16 +19,19 @@ class Home extends Component {
   }
 
   slider = () =>{
+    let timeOutInterval = null
     if(this.props.state.data.stopLoop === true){
       let nextAt = new Date().getTime() +7500
-      setTimeout(this.slider, nextAt - new Date().getTime())
+      clearTimeout(timeOutInterval);
+      timeOutInterval = setTimeout(this.slider, nextAt - new Date().getTime())
       this.props.stopLoop(false)
     }
     else{
       let nextAt = new Date().getTime() +7500
       this.props.slideImages(this.props.state.data.index)
       this.props.changeClassName("cf3FadeInOut home")
-      setTimeout(this.slider, nextAt - new Date().getTime())
+      clearTimeout(timeOutInterval);
+      timeOutInterval = setTimeout(this.slider, nextAt - new Date().getTime())
     }
 
   }
