@@ -4,52 +4,17 @@ import {LOADING_PAGE} from './redux/actions/actions'
 import Loading from './components/Loading';
 import './styles/home.css'
 import { IoIosPhoneLandscape } from "react-icons/io";
-var completeLoadImages = false;
 
 const Main = lazy(() => {
   return new Promise(resolve => {
-    // setTimeout(isCompleteLoad, 1000, resolve)
     setTimeout(()=>resolve(import('./components/Main')),5000)
   });
 });
-
-const isCompleteLoad = (resolve) =>{
-  if(completeLoadImages){
-    return resolve(import('./components/Main'));
-  } 
-  else{
-    setTimeout(isCompleteLoad, 1000, resolve)
-  }
-}
 
 class App extends Component {
   constructor(props){
     super()
     this.props = props;
-  }
-
-  componentDidMount(){
-  //   let imageArray = [...this.props.state.data.images]
-  //   this.props.state.projectsData.project.forEach((project)=>{
-  //   project.gallery.forEach((picture) => {
-  //     imageArray.push(picture)
-  //   });
-  // })
-  // this.loadImage(imageArray)
-  }
-
-  loadImage = (array, i=0) =>{
-    if(i === array.length){
-      console.log("finished!")
-      completeLoadImages = true;
-      return
-    }
-    else{
-      const img = new Image();
-      img.src = array[i];
-      window[array[i]] = img;
-      this.loadImage(array, i + 1)
-    }
   }
   render() {
     return (
