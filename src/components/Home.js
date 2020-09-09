@@ -20,8 +20,9 @@ class Home extends Component {
 
   slider = () =>{
     if(this.props.state.data.stopLoop === true){
-      let nextAt = new Date().getTime() +500
+      let nextAt = new Date().getTime() +7500
       setTimeout(this.slider, nextAt - new Date().getTime())
+      this.props.stopLoop(false)
     }
     else{
       let nextAt = new Date().getTime() +7500
@@ -44,7 +45,7 @@ class Home extends Component {
     this.props.stopLoop(true)
     this.props.changeClassName("home")
     index === 1 ?  this.props.sliderLeft(this.props.state.data.index +1):  this.props.sliderRight(this.props.state.data.index -1)
-    this.props.stopLoop(false)
+    // this.props.stopLoop(false)
   }
 
   render (){

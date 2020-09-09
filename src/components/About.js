@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import {TOGGLE_ABOUT, STOP_LOOP} from '../redux/actions/actions'
 import '../styles/about.css'
 import { FaArrowLeft } from "react-icons/fa";
-// import logger from '../scripts/consoleController'
  
 
 class About extends Component {
