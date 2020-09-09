@@ -27,7 +27,7 @@ class App extends Component {
             <IoIosPhoneLandscape className="phone-rotate"/>
           </div>
         </div>}>
-          <Main></Main>
+          <Main></Main>   
         </Suspense>
        </div>
     )
